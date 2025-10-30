@@ -1,11 +1,127 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HẢI SẢN HOÀNG GIA</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hải Sản Biển Xanh</title>
+    <link rel="icon" href="https://i.imgur.com/Bj4vYxB.jpg" type="image/jpeg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+<header>
+    <div class="logo"><i class="fa-solid fa-fish"></i> Biển Xanh</div>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Tìm kiếm hải sản..." />
+        <button><i class="fa fa-search"></i></button>
+    </div>
+
+    <nav>
+        <a href="index.html">Trang chủ</a>
+        <a href="about.html">Giới thiệu</a>
+        <a href="products.html">Sản phẩm</a>
+        <a href="contact.html">Liên hệ</a>
+        <a href="login.html">Đăng nhập</a>
+        <a href="register.html">Đăng ký</a>
+        <a href="cart.html" class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">2</span>
+        </a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Hải Sản Tươi - Chất Lượng Từ Biển Cả</h1>
+    <p>Biển Xanh mang đến cho bạn nguồn hải sản tươi ngon, sạch và được kiểm định an toàn.</p>
+    <a href="products.html" class="btn">Khám phá ngay</a>
+</section>
+
+<section class="intro">
+    <h2>Về Chúng Tôi</h2>
+    <p>Chúng tôi chuyên cung cấp hải sản tươi sống như tôm, cua, cá, mực, sò điệp... được đánh bắt và vận chuyển trực tiếp từ vùng biển Việt Nam.</p>
+</section>
+
+<section class="featured">
+    <h2>Sản Phẩm Nổi Bật</h2>
+    <div class="product-list">
+        <div class="product-card">
+            <img src="https://i.imgur.com/Bj4vYxB.jpg" alt="Tôm hùm" />
+            <h3>Tôm Hùm</h3>
+            <p>850.000đ/kg</p>
+        </div>
+        <div class="product-card">
+            <img src="https://i.imgur.com/S9Z6yrd.jpg" alt="Cua biển" />
+            <h3>Cua Biển</h3>
+            <p>600.000đ/kg</p>
+        </div>
+        <div class="product-card">
+            <img src="https://i.imgur.com/5GBjfvM.jpg" alt="Cá hồi" />
+            <h3>Cá Hồi</h3>
+            <p>450.000đ/kg</p>
+        </div>
+    </div>
+</section>
+
+<section class="quality">
+    <h2>Cam Kết Chất Lượng</h2>
+    <div class="quality-list">
+        <div class="quality-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Kiểm định an toàn</h3>
+            <p>Sản phẩm được kiểm tra nghiêm ngặt về chất lượng và vệ sinh thực phẩm.</p>
+        </div>
+        <div class="quality-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h3>Giao hàng nhanh</h3>
+            <p>Giao hàng tận nơi trong vòng 24h tại các thành phố lớn.</p>
+        </div>
+        <div class="quality-item">
+            <i class="fa-solid fa-leaf"></i>
+            <h3>Tươi sống 100%</h3>
+            <p>Hải sản được bảo quản lạnh và vận chuyển trực tiếp từ vùng biển.</p>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2>Khách Hàng Nói Gì</h2>
+    <div class="testimonial-list">
+        <div class="testimonial">
+            <p>"Tôm hùm ở đây rất tươi, thịt chắc và ngọt. Giao hàng nhanh chóng!"</p>
+            <span>- Chị Lan, TP.HCM</span>
+        </div>
+        <div class="testimonial">
+            <p>"Tôi đã đặt cua biển cho bữa tiệc gia đình, ai cũng khen ngon!"</p>
+            <span>- Anh Minh, Đà Nẵng</span>
+        </div>
+        <div class="testimonial">
+            <p>"Dịch vụ chăm sóc khách hàng rất tận tình, sẽ ủng hộ dài lâu."</p>
+            <span>- Cô Hạnh, Hà Nội</span>
+        </div>
+    </div>
+</section>
+
+<section class="faq">
+    <h2>Câu Hỏi Thường Gặp</h2>
+    <div class="faq-item">
+        <h4>❓ Tôi có thể đặt hàng như thế nào?</h4>
+        <p>Bạn có thể đặt hàng trực tiếp trên website hoặc gọi hotline 1900 1234.</p>
+    </div>
+    <div class="faq-item">
+        <h4>❓ Hải sản có được bảo quản lạnh không?</h4>
+        <p>Có, tất cả sản phẩm đều được bảo quản lạnh trong suốt quá trình vận chuyển.</p>
+    </div>
+    <div class="faq-item">
+        <h4>❓ Tôi có thể đổi trả nếu sản phẩm không đạt?</h4>
+        <p>Chúng tôi hỗ trợ đổi trả trong vòng 24h nếu sản phẩm không đúng cam kết.</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Hải Sản Biển Xanh | Giao hàng tận nơi toàn quốc</p>
+</footer>
 </body>
 </html>
