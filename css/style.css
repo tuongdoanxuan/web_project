@@ -85,6 +85,7 @@ nav {
     flex-wrap: wrap;
     gap: 12px;
     flex: 2;
+    align-items: center;
 }
 
 nav a {
@@ -97,6 +98,32 @@ nav a:hover {
     color: var(--color-hover);
     text-decoration: underline;
 }
+
+.user-menu {
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.user-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.user-icon span:hover {
+    color: var(--color-hover);
+    text-decoration: underline;
+}
+
+.user-icon i {
+    font-size: 24px;
+}
+
+
 
 /* ===== SECTION CHUNG ===== */
 section {
@@ -155,26 +182,6 @@ h2 {
     transform: scale(1.05);
 }
 
-/* ===== GIỚI THIỆU ===== */
-.intro {
-    background-color: #f1f9ff;
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.intro_about {
-    width: 100%;
-    padding: 10px 0 30px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    padding-bottom: 50px;
-}
-
-.intro p {
-    max-width: 700px;
-    margin: 0 auto;
-}
 
 /* ===== SẢN PHẨM HOT ===== */
 .hot-sale {
@@ -253,13 +260,69 @@ h2 {
 
 /* =====featured===== */
 .featured {
-    background-color: #f0f8ff;
+    background-color:  #f9f9f9;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/*Policy*/
+.customer-policy {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.customer-policy .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.customer-policy h2 {
+    text-align: center;
+    font-size: 28px;
+    color: var(--color-text);
+    margin-bottom: 40px;
+}
+
+.policy-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.policy-item {
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f1f9ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.policy-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.policy-item i {
+    font-size: 36px;
+    color: #0a6fae;
+    margin-bottom: 16px;
+}
+
+.policy-item h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.policy-item p {
+    font-size: 14px;
+    color: #555;
 }
 
 /* ====Promotion===== */
 .promotion {
-    background-color: #fffde7;
+    background-color: #f9f9f9;
     padding: 80px 15px 50px;
     margin-bottom: 30px;
     font-size: 15px;
@@ -501,7 +564,7 @@ h2 {
     left: 0;
     right: 0;
     bottom: 0;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.3);

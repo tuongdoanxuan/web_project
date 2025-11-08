@@ -1,173 +1,175 @@
 .product-section {
-  padding: 0 20px 60px;
-  max-width: 1200px;
-  margin: auto;
+    padding: 0 20px 60px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .product-section h2 {
-  font-size: 2em;
-  color: #0a6fae;
-  text-align: center;
-  margin-bottom: 30px;
+    font-size: 2em;
+    color: #0a6fae;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .product-section h3 {
-  font-size: 1.4em;
-  color: #084d7d;
-  margin-top: 40px;
-  margin-bottom: 20px;
+    font-size: 1.4em;
+    color: #084d7d;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .product-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
 }
 
 .product-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 16px;
-  width: 220px;
-  position: relative;
-  transition: transform 0.3s ease;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 320px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    width: 220px;
+    position: relative;
+    transition: transform 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .product-card img {
-  width: 200px;
-  margin-left: 12px;
-  border-radius: 8px;
-  margin-bottom: 10px;
+    width: 200px;
+    margin-left: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .product-card h3 {
-  font-size: 1.1em;
-  color: #084d7d;
-  margin: 6px 0;
-  line-height: 1.4;
+    font-size: 1.1em;
+    color: #084d7d;
+    margin: 6px 0;
+    line-height: 1.4;
 }
 
 .product-card p {
-  margin: 4px 0;
-  font-size: 0.95em;
-  line-height: 1.4;
-  color: #444;
+    margin: 4px 0;
+    font-size: 0.95em;
+    line-height: 1.4;
+    color: #444;
 }
 
 .product-card .price {
-  color: #d32f2f;
-  font-weight: bold;
-  font-size: 1em;
+    color: #d32f2f;
+    font-weight: bold;
+    font-size: 1em;
 }
 
 .product-card .tag {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #ff5722;
-  color: white;
-  padding: 3px 8px;
-  font-size: 0.75em;
-  font-weight: bold;
-  border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff5722;
+    color: white;
+    padding: 3px 8px;
+    font-size: 0.75em;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 .product-card .rating {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 8px;
-  font-size: 1em;
-  color: #ffc107; /* màu vàng sao */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 8px;
+    font-size: 1em;
+    color: #ffc107;
+    /* màu vàng sao */
 }
 
 .product-card .rating-score {
-  margin-left: 6px;
-  font-size: 0.95em;
-  color: #555;
+    margin-left: 6px;
+    font-size: 0.95em;
+    color: #555;
 }
 
 
 /* SORT */
 .sort-wrapper-right {
-  display: flex;
-  justify-content: flex-end; 
-  margin: 30px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 30px;
 }
 
 .sort-bar {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background-color: #f2f9ff;
-  padding: 14px 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 111, 174, 0.1);
-  font-family: 'Poppins', sans-serif;
-  animation: fadeIn 0.6s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #f2f9ff;
+    padding: 14px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 111, 174, 0.1);
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.6s ease-in-out;
 }
 
 .sort-bar label {
-  font-weight: 600;
-  color: #0a6fae;
-  font-size: 1.1em;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    font-weight: 600;
+    color: #0a6fae;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .sort-bar label i {
-  color: #0a6fae;
-  font-size: 1.2em;
+    color: #0a6fae;
+    font-size: 1.2em;
 }
 
 .sort-bar select {
-  padding: 10px 16px;
-  border: 1px solid #cce0f5;
-  border-radius: 8px;
-  background-color: #ffffff;
-  font-size: 1em;
-  color: #084d7d;
-  font-family: 'Poppins', sans-serif;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  min-width: 200px;
+    padding: 10px 16px;
+    border: 1px solid #cce0f5;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 1em;
+    color: #084d7d;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    min-width: 200px;
 }
 
 .sort-bar select:hover {
-  border-color: #0a6fae;
-  box-shadow: 0 2px 10px rgba(0,111,174,0.2);
-  transform: scale(1.02);
+    border-color: #0a6fae;
+    box-shadow: 0 2px 10px rgba(0, 111, 174, 0.2);
+    transform: scale(1.02);
 }
 
 .sort-bar select:focus {
-  outline: none;
-  border-color: #0a6fae;
-  box-shadow: 0 0 0 4px rgba(10, 111, 174, 0.25);
+    outline: none;
+    border-color: #0a6fae;
+    box-shadow: 0 0 0 4px rgba(10, 111, 174, 0.25);
 }
 
 /* ✨ Hiệu ứng chuyển động */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -183,7 +185,7 @@
     background-color: #fff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Hình ảnh sản phẩm */
@@ -264,6 +266,14 @@
     font-size: 15px;
 }
 
+.sub_promotion {
+    background-color: #fffde7;
+    padding: 10px 15px 10px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+}
 
 /* Dinh dưỡng */
 .nutrition-info h4 {

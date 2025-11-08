@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="css/cart.css" />
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/register.css">
-    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/logoutInInfoPage.css">
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -84,49 +86,59 @@
     </div>
 </header>
 
-<main class="checkout-wrapper">
-    <div class="checkout-header">
-        <h1>🧾 Xác Nhận Đơn Hàng</h1>
-    </div>
 
-    <div class="checkout-table">
-        <div class="checkout-row checkout-head">
-            <div class="col col-product">Sản phẩm</div>
-            <div class="col col-price">Đơn giá</div>
-            <div class="col col-qty">Số lượng</div>
-            <div class="col col-total">Thành tiền</div>
-        </div>
+<div class="account-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h3>Tài khoản</h3>
+        <ul class="menu">
+            <li><a href="#" class="active"><i class="fa-solid fa-user"></i> Thông tin tài khoản</a></li>
+            <li><a href="#"><i class="fa-solid fa-lock"></i> Đổi mật khẩu</a></li>
+            <li><a href="#"><i class="fa-solid fa-box"></i> Đơn hàng của tôi</a></li>
+            <li><a href="#"><i class="fa-solid fa-heart"></i> Sản phẩm yêu thích</a></li>
+            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a></li>
+        </ul>
+    </aside>
 
-        <!-- Sản phẩm 1 -->
-        <div class="checkout-row">
-            <div class="col col-product">
-                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg" alt="Tôm Sú" />
-                <span>Tôm Sú Tươi 500g</span>
+    <!-- Form thông tin -->
+    <section class="account-content">
+        <h2>Thông Tin Tài Khoản</h2>
+        <form class="account-form">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" value="doanxuantuong1@gmail.com" />
             </div>
-            <div class="col col-price">145.000₫</div>
-            <div class="col col-qty">1</div>
-            <div class="col col-total">145.000₫</div>
-        </div>
 
-        <!-- Sản phẩm 2 -->
-        <div class="checkout-row">
-            <div class="col col-product">
-                <img src="https://i.imgur.com/Bj4vYxB.jpg" alt="Cua Gạch" />
-                <span>Cua Gạch Cà Mau</span>
+            <div class="form-group">
+                <label for="lastname">Họ và tên đệm:</label>
+                <input type="text" id="lastname" value="Đoàn Xuân" />
             </div>
-            <div class="col col-price">220.000₫</div>
-            <div class="col col-qty">1</div>
-            <div class="col col-total">220.000₫</div>
-        </div>
-    </div>
 
-    <div class="checkout-footer">
-        <div class="total-label">Tổng cộng:</div>
-        <div class="total-amount">365.000₫</div>
-        <button class="btn-checkout"><i class="fa-solid fa-credit-card"></i> Đặt hàng ngay</button>
-    </div>
-</main>
+            <div class="form-group">
+                <label for="firstname">Tên:</label>
+                <input type="text" id="firstname" value="Tường" />
+            </div>
 
+            <div class="form-group">
+                <label for="gender">Giới tính:</label>
+                <div class="gender-options">
+                    <label><input type="radio" name="gender" value="nu" checked /> Nữ</label>
+                    <label><input type="radio" name="gender" value="nam" /> Nam</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Ngày sinh:</label>
+                <input type="date" id="dob" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn-update">Cập nhật</button>
+            </div>
+        </form>
+
+    </section>
+</div>
 
 <footer class="footer">
     <div class="footer-top">
@@ -187,6 +199,7 @@
         </div>
     </div>
 </footer>
+
 <div class="contact-floating">
     <div class="circle-btn circle-call">
         <i class="fa-solid fa-phone"></i>
@@ -203,6 +216,20 @@
         <div class="contact-info">Messenger: Biển Xanh</div>
     </div>
 </div>
+
+<!--<div class="modal show">-->
+<!--    <div class="modal__overlay"></div>-->
+<!--    <div class="modal__body">-->
+
+<!-- Modal xác nhận đăng xuất -->
+<!-- <div class="modal-box">
+    <h3>Bạn có chắc chắn muốn đăng xuất?</h3>
+    <div class="modal-actions">
+        <button onclick="closeLogoutModal()" class="btn-cancel">Hủy</button>
+        <a href="#" class="btn-confirm">Đăng xuất</a>
+    </div>
+</div> -->
+
 </body>
 
 </html>
