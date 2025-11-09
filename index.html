@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="css/cart.css" />
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="assets/fontawe/fontawesome-free-7.0.0-web/css/fontawesome-all.css">
- 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -28,8 +28,18 @@
                 <a href="index.html">Trang chủ</a>
                 <a href="about.html">Giới thiệu</a>
                 <a href="products.html">Sản phẩm</a>
-                <a href="#">Đăng nhập</a>
-                <a href="#">Đăng ký</a>
+                <!-- <a href="#">Đăng nhập</a>
+                <a href="#">Đăng ký</a> -->
+                <div class="user-menu">
+                    <div class="user-icon">
+                        <i class="fa-solid fa-user-circle"></i>
+                        <span class="username">Xin chào, Tường</span>
+                    </div>
+                    <ul class="user-dropdown">
+                        <li><a href="account.html"><i class="fa-solid fa-id-card"></i> Thông tin tài khoản</a></li>
+                        <li><a href="logout.html"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a></li>
+                    </ul>
+                </div>
                 <div class="cart-hover-area">
                     <div class="cart-icon">
                         <i class="fa-solid fa-cart-shopping"></i>
@@ -38,7 +48,8 @@
                             <div class="cart-arrow"></div>
                             <ul class="cart-items">
                                 <li>
-                                    <img src="https://i.imgur.com/Bj4vYxB.jpg" alt="Tôm Sú" />
+                                    <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                                        alt="Tôm Sú" />
                                     <div class="item-info">
                                         <div class="item-header">
                                             <h4>Tôm Sú Tươi 500g</h4>
@@ -80,97 +91,201 @@
     </section>
 
     <section class="intro">
-        <h2>Về Chúng Tôi</h2>
-        <p>Chúng tôi chuyên cung cấp hải sản tươi sống như tôm, cua, cá, mực, sò điệp... được đánh bắt và vận chuyển
-            trực
-            tiếp từ vùng biển Việt Nam.</p>
+        <div class="intro_about">
+            <h2>Về Chúng Tôi</h2>
+            <p>Chúng tôi chuyên cung cấp hải sản tươi sống như tôm, cua, cá, mực, sò điệp... được đánh bắt và vận chuyển
+                trực
+                tiếp từ vùng biển Việt Nam.</p>
+        </div>
     </section>
 
     <section class="hot-sale">
         <h2>Sản Phẩm Hot</h2>
         <div class="hot-sale-banner">
-            <img src="https://i.imgur.com/5GBjfvM.jpg" alt="Bào Ngư Hàn Quốc" />
+            <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                alt="Bào Ngư Hàn Quốc" />
             <div class="hot-sale-info">
                 <h3>Bào Ngư Hàn Quốc</h3>
                 <p class="original-price">Giá gốc: 1.500.000đ/kg</p>
                 <p class="sale-price">Chỉ còn <strong>890.000đ/kg</strong></p>
-                <a href="products.html" class="btn-buy">Mua Ngay</a>
+                <a href="#" class="btn-buy">Mua Ngay</a>
             </div>
             <span class="hot-label">🔥 HOT SALE</span>
         </div>
     </section>
+
     <section class="featured">
         <h2>🌟 Sản Phẩm Nổi Bật</h2>
         <div class="product-list">
             <div class="product-card">
-                <img src="https://i.imgur.com/abc123.jpg" alt="Cua Lông HongKong Sống" />
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
                 <h3>Cua Lông HongKong Sống</h3>
                 <p class="price">169.000₫</p>
                 <p class="weight">200g ± 50g/con</p>
                 <p class="popularity">Đã bán: 752 lượt</p>
+
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
             <div class="product-card">
-                <img src="https://i.imgur.com/def456.jpg" alt="Ghẹ Xanh Sống" />
-                <h3>Ghẹ Xanh Sống 5-7 Con/kg</h3>
-                <p class="price">185.000₫</p>
-                <p class="weight">5-7 con/kg</p>
-                <p class="popularity">Đã bán: 603 lượt</p>
-            </div>
-            <div class="product-card">
-                <img src="https://i.imgur.com/abc123.jpg" alt="Cua Lông HongKong Sống" />
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
                 <h3>Cua Lông HongKong Sống</h3>
-                <p class="price">169.000₫</p>
+                <p class="price">169.000VNĐ</p>
                 <p class="weight">200g ± 50g/con</p>
                 <p class="popularity">Đã bán: 752 lượt</p>
+
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
             <div class="product-card">
-                <img src="https://i.imgur.com/abc123.jpg" alt="Cua Lông HongKong Sống" />
-                <h3>Cua Lông HongKong Sống</h3>
-                <p class="price">169.000₫</p>
-                <p class="weight">200g ± 50g/con</p>
-                <p class="popularity">Đã bán: 752 lượt</p>
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
+                <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
+                <p class="price">229.000₫</p>
+                <p class="weight">Combo đặc biệt</p>
+                <p class="popularity">Đã bán: 1.263 lượt</p>
+                <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
             <div class="product-card">
-                <img src="https://i.imgur.com/abc123.jpg" alt="Cua Lông HongKong Sống" />
-                <h3>Cua Lông HongKong Sống</h3>
-                <p class="price">169.000₫</p>
-                <p class="weight">200g ± 50g/con</p>
-                <p class="popularity">Đã bán: 752 lượt</p>
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
+                <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
+                <p class="price">229.000₫</p>
+                <p class="weight">Combo đặc biệt</p>
+                <p class="popularity">Đã bán: 1.263 lượt</p>
+                <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
             <div class="product-card">
-                <img src="https://i.imgur.com/abc123.jpg" alt="Cua Lông HongKong Sống" />
-                <h3>Cua Lông HongKong Sống</h3>
-                <p class="price">169.000₫</p>
-                <p class="weight">200g ± 50g/con</p>
-                <p class="popularity">Đã bán: 752 lượt</p>
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
+                <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
+                <p class="price">229.000₫</p>
+                <p class="weight">Combo đặc biệt</p>
+                <p class="popularity">Đã bán: 1.263 lượt</p>
+                <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
             <div class="product-card">
-                <img src="https://i.imgur.com/abc123.jpg" alt="Cua Lông HongKong Sống" />
-                <h3>Cua Lông HongKong Sống</h3>
-                <p class="price">169.000₫</p>
-                <p class="weight">200g ± 50g/con</p>
-                <p class="popularity">Đã bán: 752 lượt</p>
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
+                <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
+                <p class="price">229.000₫</p>
+                <p class="weight">Combo đặc biệt</p>
+                <p class="popularity">Đã bán: 1.263 lượt</p>
+                <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
             <div class="product-card">
-                <img src="https://i.imgur.com/abc123.jpg" alt="Cua Lông HongKong Sống" />
-                <h3>Cua Lông HongKong Sống</h3>
-                <p class="price">169.000₫</p>
-                <p class="weight">200g ± 50g/con</p>
-                <p class="popularity">Đã bán: 752 lượt</p>
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
+                <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
+                <p class="price">229.000₫</p>
+                <p class="weight">Combo đặc biệt</p>
+                <p class="popularity">Đã bán: 1.263 lượt</p>
+                <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
             <div class="product-card">
-                <img src="https://i.imgur.com/abc123.jpg" alt="Cua Lông HongKong Sống" />
-                <h3>Cua Lông HongKong Sống</h3>
-                <p class="price">169.000₫</p>
-                <p class="weight">200g ± 50g/con</p>
-                <p class="popularity">Đã bán: 752 lượt</p>
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
+                <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
+                <p class="price">229.000₫</p>
+                <p class="weight">Combo đặc biệt</p>
+                <p class="popularity">Đã bán: 1.263 lượt</p>
+                <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
             <div class="product-card">
-                <img src="https://i.imgur.com/abc123.jpg" alt="Cua Lông HongKong Sống" />
-                <h3>Cua Lông HongKong Sống</h3>
-                <p class="price">169.000₫</p>
-                <p class="weight">200g ± 50g/con</p>
-                <p class="popularity">Đã bán: 752 lượt</p>
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
+                <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
+                <p class="price">229.000₫</p>
+                <p class="weight">Combo đặc biệt</p>
+                <p class="popularity">Đã bán: 1.263 lượt</p>
+                <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
+                <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
+                <p class="price">229.000₫</p>
+                <p class="weight">Combo đặc biệt</p>
+                <p class="popularity">Đã bán: 1.263 lượt</p>
+                <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
             <!-- Thêm sản phẩm khác -->
         </div>
@@ -180,44 +295,174 @@
         <h2>🎁 Khuyến Mại Hot</h2>
         <div class="product-list">
             <div class="product-card">
-                <img src="https://i.imgur.com/ghi789.jpg" alt="Set Mukbang Cá Hồi Mayo Chili" />
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
                 <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
                 <p class="price">229.000₫</p>
                 <p class="weight">Combo đặc biệt</p>
                 <p class="popularity">Đã bán: 1.263 lượt</p>
                 <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
             <div class="product-card">
-                <img src="https://i.imgur.com/ghi789.jpg" alt="Set Mukbang Cá Hồi Mayo Chili" />
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
                 <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
                 <p class="price">229.000₫</p>
                 <p class="weight">Combo đặc biệt</p>
                 <p class="popularity">Đã bán: 1.263 lượt</p>
                 <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
             <div class="product-card">
-                <img src="https://i.imgur.com/ghi789.jpg" alt="Set Mukbang Cá Hồi Mayo Chili" />
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
                 <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
                 <p class="price">229.000₫</p>
                 <p class="weight">Combo đặc biệt</p>
                 <p class="popularity">Đã bán: 1.263 lượt</p>
                 <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
             <div class="product-card">
-                <img src="https://i.imgur.com/ghi789.jpg" alt="Set Mukbang Cá Hồi Mayo Chili" />
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
                 <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
                 <p class="price">229.000₫</p>
                 <p class="weight">Combo đặc biệt</p>
                 <p class="popularity">Đã bán: 1.263 lượt</p>
                 <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
             <div class="product-card">
-                <img src="https://i.imgur.com/ghi789.jpg" alt="Set Mukbang Cá Hồi Mayo Chili" />
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
                 <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
                 <p class="price">229.000₫</p>
                 <p class="weight">Combo đặc biệt</p>
                 <p class="popularity">Đã bán: 1.263 lượt</p>
                 <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
+                <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
+                <p class="price">229.000₫</p>
+                <p class="weight">Combo đặc biệt</p>
+                <p class="popularity">Đã bán: 1.263 lượt</p>
+                <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
+                <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
+                <p class="price">229.000₫</p>
+                <p class="weight">Combo đặc biệt</p>
+                <p class="popularity">Đã bán: 1.263 lượt</p>
+                <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
+                <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
+                <p class="price">229.000₫</p>
+                <p class="weight">Combo đặc biệt</p>
+                <p class="popularity">Đã bán: 1.263 lượt</p>
+                <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
+                <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
+                <p class="price">229.000₫</p>
+                <p class="weight">Combo đặc biệt</p>
+                <p class="popularity">Đã bán: 1.263 lượt</p>
+                <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                    alt="Cua Lông HongKong Sống" />
+                <h3>Set Mukbang Cá Hồi Mayo Chili</h3>
+                <p class="price">229.000₫</p>
+                <p class="weight">Combo đặc biệt</p>
+                <p class="popularity">Đã bán: 1.263 lượt</p>
+                <span class="tag">ĐANG HOT</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span class="rating-score">4.0/5</span>
+                </div>
             </div>
         </div>
     </section>
@@ -337,7 +582,24 @@
             </div>
         </div>
     </footer>
+
+    <div class="contact-floating">
+        <div class="circle-btn circle-call">
+            <i class="fa-solid fa-phone"></i>
+            <div class="contact-info">Gọi: 0903 732 293</div>
+        </div>
+
+        <div class="circle-btn circle-zalo">
+            <span>Zalo</span>
+            <div class="contact-info">Zalo: 0913 433 587</div>
+        </div>
+
+        <div class="circle-btn circle-messenger">
+            <i class="fa-brands fa-facebook-messenger"></i>
+            <div class="contact-info">Messenger: Biển Xanh</div>
+        </div>
     </div>
+
 
     <!--<div class="modal show">-->
     <!--    <div class="modal__overlay"></div>-->
@@ -406,7 +668,6 @@
 
     <!--    </div>-->
     <!--</div>-->
-
 </body>
 
 </html>
