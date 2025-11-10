@@ -26,7 +26,7 @@
             <a href="about.html">Giới thiệu</a>
             <a href="products.html">Sản phẩm</a>
             <!-- <a href="#">Đăng nhập</a>
-            <a href="#">Đăng ký</a> -->
+                    <a href="#">Đăng ký</a> -->
             <div class="user-menu">
                 <div class="user-icon">
                     <i class="fa-solid fa-user-circle"></i>
@@ -45,8 +45,9 @@
                         <div class="cart-arrow"></div>
                         <ul class="cart-items">
                             <li>
-                                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                                     alt="Tôm Sú" />
+                                <img
+                                        src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                                        alt="Tôm Sú" />
                                 <div class="item-info">
                                     <div class="item-header">
                                         <h4>Tôm Sú Tươi 500g</h4>
@@ -81,250 +82,145 @@
     </div>
 </header>
 
-<div class="sort-wrapper-right">
-    <div class="sort-bar">
-        <label for="sort">
-            <i class="fa-solid fa-sort"></i> Sắp xếp theo:
-        </label>
-        <select id="sort" name="sort">
-            <option value="default">Mặc định</option>
-            <option value="name-asc">Tên A → Z</option>
-            <option value="name-desc">Tên Z → A</option>
-            <option value="price-asc">Giá tăng dần</option>
-            <option value="price-desc">Giá giảm dần</option>
-            <option value="category">Loại sản phẩm</option>
-        </select>
+<nav class="category-nav">
+    <ul>
+        <li><a class="product-filter active" href="products.html">Tất cả</a></li>
+        <li><a class="product-filter" href="productsFilter_Cua.html">Cua</a></li>
+        <li><a class="product-filter" href="productsFilter_Ca.html">Cá</a></li>
+        <li><a class="product-filter" href="productsFilter_Ghe.html">Ghẹ</a></li>
+        <li><a class="product-filter" href="productsFilter_Oc.html">Ốc</a></li>
+        <li><a class="product-filter" href="productsFilter_So.html">Sò</a></li>
+    </ul>
+</nav>
+
+
+<div class="product-list" id="product-list">
+    <!-- Các sản phẩm sẽ được render ở đây -->
+    <div class="product-card">
+        <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+             alt="Cua Lông HongKong Sống" />
+        <h3>Cua Lông HongKong Sống</h3>
+        <p class="price">169.000₫</p>
+        <p class="weight">200g ± 50g/con</p>
+        <p class="popularity">Đã bán: 752 lượt</p>
+        <span class="tag">ĐANG HOT</span>
+
+        <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <span class="rating-score">4.0/5</span>
+        </div>
     </div>
+    <div class="product-card">
+        <img src="https://product.hstatic.net/200000325181/product/oc_huong.jpg" alt="Ốc Hương" />
+        <h3>Ốc Hương Tươi</h3>
+        <p class="price">129.000₫</p>
+        <p class="weight">300g ± 50g/phần</p>
+        <p class="popularity">Đã bán: 512 lượt</p>
+        <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <span class="rating-score">4.0/5</span>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="https://product.hstatic.net/200000325181/product/oc_huong.jpg" alt="Ốc Hương" />
+        <h3>Ốc Hương Tươi</h3>
+        <p class="price">129.000₫</p>
+        <p class="weight">300g ± 50g/phần</p>
+        <p class="popularity">Đã bán: 512 lượt</p>
+        <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <span class="rating-score">4.0/5</span>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="https://product.hstatic.net/200000325181/product/oc_huong.jpg" alt="Ốc Hương" />
+        <h3>Ốc Hương Tươi</h3>
+        <p class="price">129.000₫</p>
+        <p class="weight">300g ± 50g/phần</p>
+        <p class="popularity">Đã bán: 512 lượt</p>
+        <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <span class="rating-score">4.0/5</span>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="https://product.hstatic.net/200000325181/product/oc_huong.jpg" alt="Ốc Hương" />
+        <h3>Ốc Hương Tươi</h3>
+        <p class="price">129.000₫</p>
+        <p class="weight">300g ± 50g/phần</p>
+        <p class="popularity">Đã bán: 512 lượt</p>
+        <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <span class="rating-score">4.0/5</span>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="https://product.hstatic.net/200000325181/product/oc_huong.jpg" alt="Ốc Hương" />
+        <h3>Ốc Hương Tươi</h3>
+        <p class="price">129.000₫</p>
+        <p class="weight">300g ± 50g/phần</p>
+        <p class="popularity">Đã bán: 512 lượt</p>
+        <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <span class="rating-score">4.0/5</span>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="https://product.hstatic.net/200000325181/product/oc_huong.jpg" alt="Ốc Hương" />
+        <h3>Ốc Hương Tươi</h3>
+        <p class="price">129.000₫</p>
+        <p class="weight">300g ± 50g/phần</p>
+        <p class="popularity">Đã bán: 512 lượt</p>
+        <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <span class="rating-score">4.0/5</span>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="https://product.hstatic.net/200000325181/product/oc_huong.jpg" alt="Ốc Hương" />
+        <h3>Ốc Hương Tươi</h3>
+        <p class="price">129.000₫</p>
+        <p class="weight">300g ± 50g/phần</p>
+        <p class="popularity">Đã bán: 512 lượt</p>
+        <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <span class="rating-score">4.0/5</span>
+        </div>
+    </div>
+
 </div>
-
-
-
-<section class="product-section">
-    <h2>Sản Phẩm Theo Danh Mục</h2>
-
-    <h3>🦀 Cua & Ghẹ</h3>
-    <div class="product-list">
-        <!-- Cua Lông, Ghẹ Xanh -->
-        <div class="product-card">
-            <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                 alt="Cua Lông HongKong Sống" />
-            <h3>Cua Lông HongKong Sống</h3>
-            <p class="price">169.000₫</p>
-            <p class="weight">200g ± 50g/con</p>
-            <p class="popularity">Đã bán: 752 lượt</p>
-            <span class="tag">ĐANG HOT</span>
-
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="rating-score">4.0/5</span>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                 alt="Cua Lông HongKong Sống" />
-            <h3>Cua Lông HongKong Sống</h3>
-            <p class="price">169.000₫</p>
-            <p class="weight">200g ± 50g/con</p>
-            <p class="popularity">Đã bán: 752 lượt</p>
-
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="rating-score">4.0/5</span>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                 alt="Cua Lông HongKong Sống" />
-            <h3>Cua Lông HongKong Sống</h3>
-            <p class="price">169.000₫</p>
-            <p class="weight">200g ± 50g/con</p>
-            <p class="popularity">Đã bán: 752 lượt</p>
-
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="rating-score">4.0/5</span>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                 alt="Cua Lông HongKong Sống" />
-            <h3>Cua Lông HongKong Sống</h3>
-            <p class="price">169.000₫</p>
-            <p class="weight">200g ± 50g/con</p>
-            <p class="popularity">Đã bán: 752 lượt</p>
-
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="rating-score">4.0/5</span>
-            </div>
-        </div>
-
-    </div>
-
-    <h3>🐚 Ốc & Sò</h3>
-    <div class="product-list">
-        <!-- Ốc Hương -->
-        <div class="product-card">
-            <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                 alt="Cua Lông HongKong Sống" />
-            <h3>Cua Lông HongKong Sống</h3>
-            <p class="price">169.000₫</p>
-            <p class="weight">200g ± 50g/con</p>
-            <p class="popularity">Đã bán: 752 lượt</p>
-            <span class="tag">ĐANG HOT</span>
-
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="rating-score">4.0/5</span>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                 alt="Cua Lông HongKong Sống" />
-            <h3>Cua Lông HongKong Sống</h3>
-            <p class="price">169.000₫</p>
-            <p class="weight">200g ± 50g/con</p>
-            <p class="popularity">Đã bán: 752 lượt</p>
-
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="rating-score">4.0/5</span>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                 alt="Cua Lông HongKong Sống" />
-            <h3>Cua Lông HongKong Sống</h3>
-            <p class="price">169.000₫</p>
-            <p class="weight">200g ± 50g/con</p>
-            <p class="popularity">Đã bán: 752 lượt</p>
-
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="rating-score">4.0/5</span>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                 alt="Cua Lông HongKong Sống" />
-            <h3>Cua Lông HongKong Sống</h3>
-            <p class="price">169.000₫</p>
-            <p class="weight">200g ± 50g/con</p>
-            <p class="popularity">Đã bán: 752 lượt</p>
-
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="rating-score">4.0/5</span>
-            </div>
-        </div>
-    </div>
-
-    <h3>🐟 Cá Hồi & Chế Biến Sẵn</h3>
-    <div class="product-list">
-        <!-- Set Mukbang, Cá Hồi Ngâm Tương -->
-        <div class="product-card">
-            <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                 alt="Cua Lông HongKong Sống" />
-            <h3>Cua Lông HongKong Sống</h3>
-            <p class="price">169.000₫</p>
-            <p class="weight">200g ± 50g/con</p>
-            <p class="popularity">Đã bán: 752 lượt</p>
-            <span class="tag">ĐANG HOT</span>
-
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="rating-score">4.0/5</span>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                 alt="Cua Lông HongKong Sống" />
-            <h3>Cua Lông HongKong Sống</h3>
-            <p class="price">169.000₫</p>
-            <p class="weight">200g ± 50g/con</p>
-            <p class="popularity">Đã bán: 752 lượt</p>
-
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="rating-score">4.0/5</span>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                 alt="Cua Lông HongKong Sống" />
-            <h3>Cua Lông HongKong Sống</h3>
-            <p class="price">169.000₫</p>
-            <p class="weight">200g ± 50g/con</p>
-            <p class="popularity">Đã bán: 752 lượt</p>
-
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="rating-score">4.0/5</span>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                 alt="Cua Lông HongKong Sống" />
-            <h3>Cua Lông HongKong Sống</h3>
-            <p class="price">169.000₫</p>
-            <p class="weight">200g ± 50g/con</p>
-            <p class="popularity">Đã bán: 752 lượt</p>
-
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <span class="rating-score">4.0/5</span>
-            </div>
-        </div>
-    </div>
-</section>
 
 <footer class="footer">
     <div class="footer-top">
