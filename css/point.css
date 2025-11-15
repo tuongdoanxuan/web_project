@@ -1,0 +1,64 @@
+.loyalty-wrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.loyalty-wrapper h1 {
+  font-size: 1.6em;
+  color: #084d7d;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.customer-info p {
+  font-size: 0.95em;
+  margin: 6px 0;
+}
+
+.points {
+  font-weight: bold;
+  color: #ff5722;
+}
+
+.point-history h2,
+.redeem-suggestions h2 {
+  font-size: 1.2em;
+  margin: 24px 0 12px;
+  color: #084d7d;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+table th,
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+table th {
+  background: #f0f4f8;
+  color: #333;
+}
+
+.redeem-suggestions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.redeem-suggestions li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95em;
+}
