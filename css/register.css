@@ -22,6 +22,7 @@
 }
 
 .auth-form__switch-btn {
+    position: relative;
     font-size: 1em;
     color: #0a6fae;
     cursor: pointer;
@@ -83,11 +84,21 @@
 
 .auth-form__controls-back,
 .btn--primary {
+    position: relative;
     padding: 10px 20px;
     border-radius: 6px;
     font-size: 1em;
     cursor: pointer;
     border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn--normal {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
@@ -159,6 +170,31 @@
         gap: 12px;
     }
 }
+
+
+/* .success-container {
+    background: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    width: 360px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+} */
+
+.success-container p {
+    color: #555;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.success-container 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    gap: 20px;
+}
+
 
 /* ===== Animation ===== */
 @keyframes fadeIn {

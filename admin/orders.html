@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Đơn Hàng | Admin</title>
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/orders.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+         <aside class="admin-sidebar">
+            <h2 class="logo">Biển Xanh Admin</h2>
+            <ul class="admin-menu">
+                <li><a href="dashboard.html" class="active"><i class="fa-solid fa-chart-line"></i> Tổng quan</a></li>
+                <li><a href="products.html"><i class="fa-solid fa-boxes-stacked"></i> Sản phẩm</a></li>
+                <li><a href="orders.html"><i class="fa-solid fa-receipt"></i> Đơn hàng</a></li>
+                <li><a href="users.html"><i class="fa-solid fa-users"></i> Người dùng</a></li>
+                <li><a href="comment.html"><i class="fa-solid fa-users"></i> Đánh giá của khách hàng</a></li>
+                <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Thoát admin</a></li>
+            </ul>
+        </aside>
+
+        <!-- Nội dung chính -->
+        <main class="admin-content">
+            <header class="admin-header">
+                <h1>Quản lý đơn hàng</h1>
+                <p>Danh sách các đơn hàng gần đây</p>
+            </header>
+
+            <!-- Tìm kiếm đơn hàng -->
+            <div class="order-search">
+                <input type="text" id="searchOrder" placeholder="Nhập mã đơn hàng (VD: ĐH001)" />
+                <button onclick=""><i class="fa fa-search"></i> Tìm kiếm</button>
+            </div>
+
+            <!-- Bảng đơn hàng -->
+            <section class="order-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><i class="fa-solid fa-barcode"></i> Mã đơn</th>
+                            <th><i class="fa-solid fa-user"></i> Khách hàng</th>
+                            <th><i class="fa-solid fa-calendar-day"></i> Ngày đặt</th>
+                            <th><i class="fa-solid fa-money-bill-wave"></i> Tổng tiền</th>
+                            <th><i class="fa-solid fa-circle-info"></i> Trạng thái</th>
+                            <th><i class="fa-solid fa-gear"></i> Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ĐH001</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>08/11/2025</td>
+                            <td>365.000₫</td>
+                            <td><span class="status delivered">Đã giao</span></td>
+                            <td>
+                                <a href="ordersDetail.html" class="btn-view" title="Xem chi tiết">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <button class="btn-delete" title="Xóa đơn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ĐH002</td>
+                            <td>Trần Thị B</td>
+                            <td>08/11/2025</td>
+                            <td>180.000₫</td>
+                            <td><span class="status pending">Đang xử lý</span></td>
+                            <td>
+                                <a href="ordersDetail.html" class="btn-view" title="Xem chi tiết">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <button class="btn-delete" title="Xóa đơn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

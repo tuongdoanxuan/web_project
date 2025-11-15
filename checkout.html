@@ -2,15 +2,18 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hải Sản Biển Xanh</title>
-  <link rel="icon" href="https://i.imgur.com/Bj4vYxB.jpg" type="image/jpeg" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/cart.css" />
-  <link rel="stylesheet" href="css/products.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hải Sản Biển Xanh</title>
+    <link rel="icon" href="https://i.imgur.com/Bj4vYxB.jpg" type="image/jpeg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -98,152 +101,52 @@
             </nav>
         </div>
     </header>
-    
-    <main>
-      
-      <nav class="category-nav">
-        <ul>
-          <li><a class="product-filter active" href="products.html">Tất cả</a></li>
-          <li><a class="product-filter" href="productsFilter_Cua.html">Cua</a></li>
-          <li><a class="product-filter" href="productsFilter_Ca.html">Cá</a></li>
-          <li><a class="product-filter" href="productsFilter_Ghe.html">Ghẹ</a></li>
-          <li><a class="product-filter" href="productsFilter_Oc.html">Ốc</a></li>
-          <li><a class="product-filter" href="productsFilter_So.html">Sò</a></li>
-        </ul>
-      </nav>
 
-  <div class="sort-wrapper-right">
-    <div class="sort-bar">
-      <label for="sort">
-        <i class="fa-solid fa-sort"></i> Sắp xếp theo:
-      </label>
-      <select id="sort" name="sort">
-        <option value="default">Ngẫu nhiên</option>
-        <option value="name-asc">Tên A → Z</option>
-        <option value="name-desc">Tên Z → A</option>
-        <option value="price-asc">Giá tăng dần</option>
-        <option value="price-desc">Giá giảm dần</option>
-      </select>
+    <main class="checkout-wrapper">
+  <div class="checkout-header">
+    <h1>🧾 Xác Nhận Đơn Hàng</h1>
+  </div>
+
+  <div class="checkout-table">
+    <div class="checkout-row checkout-head">
+      <div class="col col-product">Sản phẩm</div>
+      <div class="col col-price">Đơn giá</div>
+      <div class="col col-qty">Số lượng</div>
+      <div class="col col-total">Thành tiền</div>
+    </div>
+
+    <!-- Sản phẩm 1 -->
+    <div class="checkout-row">
+      <div class="col col-product">
+        <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg" alt="Tôm Sú" />
+        <span>Tôm Sú Tươi 500g</span>
+      </div>
+      <div class="col col-price">145.000₫</div>
+      <div class="col col-qty">1</div>
+      <div class="col col-total">145.000₫</div>
+    </div>
+
+    <!-- Sản phẩm 2 -->
+    <div class="checkout-row">
+      <div class="col col-product">
+        <img src="https://i.imgur.com/Bj4vYxB.jpg" alt="Cua Gạch" />
+        <span>Cua Gạch Cà Mau</span>
+      </div>
+      <div class="col col-price">220.000₫</div>
+      <div class="col col-qty">1</div>
+      <div class="col col-total">220.000₫</div>
     </div>
   </div>
 
-      <div class="product-list" id="product-list">
-        <!-- Các sản phẩm sẽ được render ở đây -->
-        <div class="product-card">
-          <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-            alt="Cua Lông HongKong Sống" />
-          <h3>Cua Lông HongKong Sống</h3>
-          <p class="price">169.000VNĐ</p>
-          <p class="weight">200g ± 50g/con</p>
-          <p class="popularity">Đã bán: 752 lượt</p>
-          <span class="tag">ĐANG HOT</span>
+  <div class="checkout-footer">
+    <div class="total-label">Tổng cộng:</div>
+    <div class="total-amount">365.000₫</div>
+    <button class="btn-checkout"><i class="fa-solid fa-credit-card"></i> Đặt hàng ngay</button>
+  </div>
+</main>
 
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="rating-score">4.0/5</span>
-          </div>
 
-          <div class="cart-but" title="Thêm vào giỏ hàng">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-            alt="Cua Lông HongKong Sống" />
-          <h3>Cua Lông HongKong Sống</h3>
-          <p class="price">169.000VNĐ</p>
-          <p class="weight">200g ± 50g/con</p>
-          <p class="popularity">Đã bán: 752 lượt</p>
-          <span class="tag">ĐANG HOT</span>
-
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="rating-score">4.0/5</span>
-          </div>
-
-          <div class="cart-but" title="Thêm vào giỏ hàng">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-            alt="Cua Lông HongKong Sống" />
-          <h3>Cua Lông HongKong Sống</h3>
-          <p class="price">169.000VNĐ</p>
-          <p class="weight">200g ± 50g/con</p>
-          <p class="popularity">Đã bán: 752 lượt</p>
-          <span class="tag">ĐANG HOT</span>
-
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="rating-score">4.0/5</span>
-          </div>
-
-          <div class="cart-but" title="Thêm vào giỏ hàng">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-            alt="Cua Lông HongKong Sống" />
-          <h3>Cua Lông HongKong Sống</h3>
-          <p class="price">169.000VNĐ</p>
-          <p class="weight">200g ± 50g/con</p>
-          <p class="popularity">Đã bán: 752 lượt</p>
-          <span class="tag">ĐANG HOT</span>
-
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="rating-score">4.0/5</span>
-          </div>
-
-          <div class="cart-but" title="Thêm vào giỏ hàng">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-            alt="Cua Lông HongKong Sống" />
-          <h3>Cua Lông HongKong Sống</h3>
-          <p class="price">169.000VNĐ</p>
-          <p class="weight">200g ± 50g/con</p>
-          <p class="popularity">Đã bán: 752 lượt</p>
-          <span class="tag">ĐANG HOT</span>
-
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <span class="rating-score">4.0/5</span>
-          </div>
-
-          <div class="cart-but" title="Thêm vào giỏ hàng">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div>
-        </div>
-
-      </div>
-    </main>
-
-  <footer class="footer">
+   <footer class="footer">
         <div class="footer-top">
             <div class="footer-logo">
                 <img src="https://i.imgur.com/Bj4vYxB.jpg" alt="Logo Biển Xanh" />
@@ -302,27 +205,27 @@
             </div>
         </div>
     </footer>
+    <div class="contact-floating">
+        <div class="circle-btn circle-call">
+            <i class="fa-solid fa-phone"></i>
+            <div class="contact-info">Gọi: 0903 732 293</div>
+        </div>
 
-  <div class="contact-floating">
-    <div class="circle-btn circle-call">
-      <i class="fa-solid fa-phone"></i>
-      <div class="contact-info">Gọi: 0903 732 293</div>
-    </div>
+        <div class="circle-btn circle-zalo">
+            <span>Zalo</span>
+            <div class="contact-info">Zalo: 0913 433 587</div>
+        </div>
 
-    <div class="circle-btn circle-zalo">
-      <span>Zalo</span>
-      <div class="contact-info">Zalo: 0913 433 587</div>
-    </div>
-
-    <div class="circle-btn circle-messenger">
-      <i class="fa-brands fa-facebook-messenger"></i>
-      <div class="contact-info">Messenger: Biển Xanh</div>
-    </div>
-     <div class="circle-btn circle-review">
+        <div class="circle-btn circle-messenger">
+            <i class="fa-brands fa-facebook-messenger"></i>
+            <div class="contact-info">Messenger: Biển Xanh</div>
+        </div>
+        <div class="circle-btn circle-review">
             <i class="fa-solid fa-message"></i>
             <div class="contact-info">Đánh giá: Gửi phản hồi</div>
         </div>
-  </div>
+    </div>
+
 </body>
 
 </html>

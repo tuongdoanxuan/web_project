@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi Tiết Người Dùng | Admin</title>
+  <link rel="stylesheet" href="css/admin.css" />
+  <link rel="stylesheet" href="css/usersDetail.css" />
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="admin-wrapper">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+            <h2 class="logo">Biển Xanh Admin</h2>
+            <ul class="admin-menu">
+                <li><a href="dashboard.html" class="active"><i class="fa-solid fa-chart-line"></i> Tổng quan</a></li>
+                <li><a href="products.html"><i class="fa-solid fa-boxes-stacked"></i> Sản phẩm</a></li>
+                <li><a href="orders.html"><i class="fa-solid fa-receipt"></i> Đơn hàng</a></li>
+                <li><a href="users.html"><i class="fa-solid fa-users"></i> Người dùng</a></li>
+                <li><a href="comment.html"><i class="fa-solid fa-users"></i> Đánh giá của khách hàng</a></li>
+                <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Thoát admin</a></li>
+                <!-- <li><a href="../index.html"><i class="fa-solid fa-right-from-bracket"></i> Thoát admin</a></li> (ví dụ muốn về lại trang chủ thì dùng ..)-->
+
+            </ul>
+        </aside>
+
+    <!-- Nội dung chính -->
+    <main class="admin-content">
+      <header class="admin-header">
+        <h1>Chi tiết người dùng</h1>
+        <p>Thông tin tài khoản của <strong>Nguyễn Văn A</strong></p>
+      </header>
+
+      <section class="user-info">
+        <div class="info-box">
+          <h3><i class="fa-solid fa-user"></i> Thông tin cá nhân</h3>
+          <ul>
+            <li><strong>Họ tên:</strong> Nguyễn Văn A</li>
+            <li><strong>Email:</strong> nguyena@example.com</li>
+            <li><strong>Số điện thoại:</strong> 0901234567</li>
+            <li><strong>Địa chỉ:</strong> 123 Đường Biển, TP. Hồ Chí Minh</li>
+          </ul>
+        </div>
+
+        <div class="info-box">
+          <h3><i class="fa-solid fa-user-shield"></i> Thông tin hệ thống</h3>
+          <ul>
+            <li><strong>Vai trò:</strong> Khách hàng</li>
+            <li><strong>Trạng thái:</strong> <span class="status active">Hoạt động</span></li>
+            <li><strong>Ngày đăng ký:</strong> 01/11/2025</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="user-actions">
+        <button class="btn-lock"><i class="fa-solid fa-lock"></i> Khóa tài khoản</button>
+        <button class="btn-reset"><i class="fa-solid fa-rotate-left"></i> Reset người dùng</button>
+        <button class="btn-notify"><i class="fa-solid fa-paper-plane"></i> Gửi thông báo</button>
+        <button class="btn-delete"><i class="fa-solid fa-trash"></i> Xóa người dùng</button>
+      </div>
+
+
+    </main>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Sản Phẩm | Admin</title>
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/products.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <h2 class="logo">Biển Xanh Admin</h2>
+            <ul class="admin-menu">
+                <li><a href="dashboard.html" class="active"><i class="fa-solid fa-chart-line"></i> Tổng quan</a></li>
+                <li><a href="products.html"><i class="fa-solid fa-boxes-stacked"></i> Sản phẩm</a></li>
+                <li><a href="orders.html"><i class="fa-solid fa-receipt"></i> Đơn hàng</a></li>
+                <li><a href="users.html"><i class="fa-solid fa-users"></i> Người dùng</a></li>
+                <li><a href="comment.html"><i class="fa-solid fa-users"></i> Đánh giá của khách hàng</a></li>
+                <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Thoát admin</a></li>
+            </ul>
+        </aside>
+
+        <!-- Nội dung chính -->
+        <main class="admin-content">
+            <header class="admin-header">
+                <h1>Quản lý sản phẩm</h1>
+                <p>Danh sách sản phẩm đang bán</p>
+            </header>
+              <!-- Tìm kiếm sản phẩm -->
+            <div class="order-search">
+                <input type="text" id="searchOrder" placeholder="Nhập tên sản phẩm (VD:Tôm)" />
+                <button onclick=""><i class="fa fa-search"></i> Tìm kiếm</button>
+            </div>
+            <div class="product-actions">
+                <a href="addProducts.html" class="btn-add"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
+            </div>
+
+            <section class="product-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Loại</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
+                                    alt="Tôm Sú" /></td>
+                            <td>Tôm Sú Tươi 500g</td>
+                            <td>145.000₫</td>
+                            <td>Hải sản tươi</td>
+                            <td><span class="status active">Đang bán</span></td>
+                            <td>
+                                <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://i.imgur.com/Bj4vYxB.jpg" alt="Cua Gạch" /></td>
+                            <td>Cua Gạch Cà Mau</td>
+                            <td>220.000₫</td>
+                            <td>Hải sản cao cấp</td>
+                            <td><span class="status inactive">Tạm ngưng</span></td>
+                            <td>
+                                <button class="btn-edit"><i class="fa-solid fa-pen"></i></button>
+                                <button class="btn-delete"><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

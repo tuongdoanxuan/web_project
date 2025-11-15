@@ -1,0 +1,146 @@
+/* Khung bao ngoài */
+.account-wrapper {
+  display: flex;
+  max-width: 1100px;
+  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Sidebar bên trái */
+.sidebar {
+  width: 280px;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 30px 20px;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .menu li {
+  margin-bottom: 15px;
+}
+
+.sidebar .menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.sidebar .menu a:hover,
+.sidebar .menu a.active {
+  background-color: rgba(255,255,255,0.2);
+}
+/* Phần nội dung bên phải */
+  .account-content {
+    flex: 1;
+    padding: 40px;
+  }
+
+  .account-content h2 {
+    margin-bottom: 30px;
+    color: var(--color-primary);
+    font-size: 24px;
+  }
+/* bên phải */
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.favorite-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px 24px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease;
+}
+
+.favorite-row:hover {
+  background-color: #f9f9f9;
+}
+
+.favorite-row img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.favorite-row h4 {
+  width: 250px;              /* Cố định chiều rộng */
+  font-size: 18px;
+  color: #000;
+  margin: 0;
+  white-space: normal;       /* Cho phép xuống dòng */
+  word-break: break-word;    /* Nếu tên quá dài, tự ngắt */
+}
+
+.favorite-row .price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.btn-view {
+  padding: 8px 14px;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-view:hover {
+  background-color: var(--color-secondary);
+}
+
+.btn-remove {
+  background: none;
+  border: none;
+  color: #d9534f;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.btn-remove:hover {
+  color: #a94442;
+}
+
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .account-wrapper {
+    flex-direction: column;
+  }
+}
