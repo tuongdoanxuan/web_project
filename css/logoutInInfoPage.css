@@ -1,66 +1,66 @@
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    display: none;                /* Căn giữa bằng flex */
-    justify-content: center;     /* Căn giữa ngang */
-    align-items: center;         /* Căn giữa dọc */
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: none;                /* Căn giữa bằng flex */
+  justify-content: center;     /* Căn giữa ngang */
+  align-items: center;         /* Căn giữa dọc */
+  z-index: 1000;
 }
 
 
 .modal-box {
-    background-color: #fff;
-    padding: 30px 24px;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
+  background-color: #fff;
+  padding: 30px 24px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
 }
 
 .modal-box h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #333;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .modal-actions {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
 
 .btn-cancel,
 .btn-confirm {
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btn-cancel {
-    background-color: #eee;
-    color: #333;
-    border: none;
+  background-color: #eee;
+  color: #333;
+  border: none;
 }
 
 .btn-cancel:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 .btn-confirm {
-    background-color: #d9534f;
-    color: white;
-    border: none;
+  background-color: #d9534f;
+  color: white;
+  border: none;
 }
 
 .btn-confirm:hover {
-    background-color: #a94442;
+  background-color: #a94442;
 }
