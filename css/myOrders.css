@@ -9,6 +9,10 @@
   overflow: hidden;
 }
 
+td {
+  position: relative;
+}
+
 /* Sidebar bên trái */
 .sidebar {
   width: 280px;
