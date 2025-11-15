@@ -18,10 +18,11 @@
         <aside class="admin-sidebar">
             <h2 class="logo">Biển Xanh Admin</h2>
             <ul class="admin-menu">
-                <li><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Tổng quan</a></li>
-                <li><a href="products.html" class="active"><i class="fa-solid fa-boxes-stacked"></i> Sản phẩm</a></li>
+                <li><a href="dashboard.html" class="active"><i class="fa-solid fa-chart-line"></i> Tổng quan</a></li>
+                <li><a href="products.html"><i class="fa-solid fa-boxes-stacked"></i> Sản phẩm</a></li>
                 <li><a href="orders.html"><i class="fa-solid fa-receipt"></i> Đơn hàng</a></li>
                 <li><a href="users.html"><i class="fa-solid fa-users"></i> Người dùng</a></li>
+                <li><a href="comment.html"><i class="fa-solid fa-users"></i> Đánh giá của khách hàng</a></li>
                 <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Thoát admin</a></li>
             </ul>
         </aside>
@@ -32,7 +33,11 @@
                 <h1>Quản lý sản phẩm</h1>
                 <p>Danh sách sản phẩm đang bán</p>
             </header>
-
+              <!-- Tìm kiếm sản phẩm -->
+            <div class="order-search">
+                <input type="text" id="searchOrder" placeholder="Nhập tên sản phẩm (VD:Tôm)" />
+                <button onclick=""><i class="fa fa-search"></i> Tìm kiếm</button>
+            </div>
             <div class="product-actions">
                 <a href="addProducts.html" class="btn-add"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
             </div>

@@ -15,13 +15,14 @@
 <body>
     <div class="admin-wrapper">
         <!-- Sidebar -->
-        <aside class="admin-sidebar">
+         <aside class="admin-sidebar">
             <h2 class="logo">Biển Xanh Admin</h2>
             <ul class="admin-menu">
-                <li><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Tổng quan</a></li>
+                <li><a href="dashboard.html" class="active"><i class="fa-solid fa-chart-line"></i> Tổng quan</a></li>
                 <li><a href="products.html"><i class="fa-solid fa-boxes-stacked"></i> Sản phẩm</a></li>
-                <li><a href="orders.html" class="active"><i class="fa-solid fa-receipt"></i> Đơn hàng</a></li>
+                <li><a href="orders.html"><i class="fa-solid fa-receipt"></i> Đơn hàng</a></li>
                 <li><a href="users.html"><i class="fa-solid fa-users"></i> Người dùng</a></li>
+                <li><a href="comment.html"><i class="fa-solid fa-users"></i> Đánh giá của khách hàng</a></li>
                 <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Thoát admin</a></li>
             </ul>
         </aside>
@@ -33,6 +34,13 @@
                 <p>Danh sách các đơn hàng gần đây</p>
             </header>
 
+            <!-- Tìm kiếm đơn hàng -->
+            <div class="order-search">
+                <input type="text" id="searchOrder" placeholder="Nhập mã đơn hàng (VD: ĐH001)" />
+                <button onclick=""><i class="fa fa-search"></i> Tìm kiếm</button>
+            </div>
+
+            <!-- Bảng đơn hàng -->
             <section class="order-table">
                 <table>
                     <thead>

@@ -112,20 +112,26 @@
         </section>
 
 
+        <!-- ====== MODIFIED promo-gallery SECTION (only this section edited) ====== -->
         <section class="promo-gallery">
             <h2>Ưu Đãi Hải Sản</h2>
             <div class="gallery-wrapper">
-                <div class="main-image">
-                    <img src="assets/img/promo1.png"
-                        alt="Cua Lông HongKong Sống" />
-                    <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                <div class="main-gallery">
+                    <div class="main-image" aria-live="polite">
+                        <!-- Make sure first image has .active -->
+                        <img src="assets/img/promo1.png" alt="Cua Lông HongKong Sống - 1" class="active" />
+                        <img src="assets/img/promo1.png" alt="Cua Lông HongKong Sống - 2" />
+                        <img src="assets/img/promo1.png" alt="Cua Lông HongKong Sống - 3" />
 
-                    <!-- Indicator -->
-                    <div class="image-indicator">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
+                        <button class="nav-btn prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-btn next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+
+                        <!-- Indicator -->
+                        <div class="image-indicator" role="tablist">
+                            <span class="dot active" data-index="0" role="tab" aria-selected="true"></span>
+                            <span class="dot" data-index="1" role="tab" aria-selected="false"></span>
+                            <span class="dot" data-index="2" role="tab" aria-selected="false"></span>
+                        </div>
                     </div>
                 </div>
 
@@ -141,7 +147,190 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Inline styles scoped for this section to avoid touching global css files -->
+            <style>
+                /*
+                  Fix for collapsed height: the original .main-gallery uses height:100% in global CSS,
+                  which collapses when parent has no explicit height. Override it here and make it responsive.
+                */
+                .main-gallery {
+                    /* give the gallery an explicit height to avoid 0 height collapse */
+                    height: 470px !important;
+                    max-height: 60vh;
+                    /* keep it responsive on very short viewports */
+                    width: 70%;
+                }
+
+                /* Ensure the inner container fills the gallery height */
+                .main-gallery .main-image {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+
+                /* stacked, fading slides */
+                .main-gallery .main-image img {
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                    opacity: 0;
+                    transition: opacity 0.5s ease;
+                    z-index: 1;
+                }
+
+                .main-gallery .main-image img.active {
+                    opacity: 1;
+                    z-index: 2;
+                }
+
+                /* ensure nav buttons are visible above images */
+                .main-gallery .nav-btn {
+                    z-index: 5;
+                }
+
+                .image-indicator {
+                    position: absolute;
+                    bottom: 15px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    gap: 8px;
+                }
+
+                .dot {
+                    width: 12px;
+                    height: 12px;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    border-radius: 50%;
+                    cursor: pointer;
+                    transition: transform 0.2s ease, background-color 0.2s ease;
+                    display: inline-block;
+                    border: 2px solid rgba(0, 0, 0, 0.08);
+                }
+
+                .dot.active {
+                    background-color: #2196f3;
+                    transform: scale(1.15);
+                }
+
+                /* Responsive fallback: on small screens reduce height */
+                @media (max-width: 768px) {
+                    .main-gallery {
+                        height: 260px !important;
+                        width: 100%;
+                        max-height: none;
+                    }
+                }
+            </style>
+
+            <!-- Inline script to auto-slide main-gallery every 1s -->
+            <script>
+                (function () {
+                    const galleryRoot = document.querySelector('.main-gallery .main-image');
+                    if (!galleryRoot) return;
+
+                    const slides = Array.from(galleryRoot.querySelectorAll('img'));
+                    const dots = Array.from(galleryRoot.querySelectorAll('.dot'));
+                    const btnNext = galleryRoot.querySelector('.next');
+                    const btnPrev = galleryRoot.querySelector('.prev');
+
+                    let index = slides.findIndex(s => s.classList.contains('active'));
+                    if (index === -1) index = 0;
+                    const SLIDE_INTERVAL_MS = 1000; // 1 second as requested
+                    let timer = null;
+
+                    function showSlide(newIndex) {
+                        if (newIndex === index) return;
+                        slides[index].classList.remove('active');
+                        dots[index] && dots[index].classList.remove('active');
+                        dots[index] && dots[index].setAttribute('aria-selected', 'false');
+
+                        index = (newIndex + slides.length) % slides.length;
+
+                        slides[index].classList.add('active');
+                        dots[index] && dots[index].classList.add('active');
+                        dots[index] && dots[index].setAttribute('aria-selected', 'true');
+                    }
+
+                    function nextSlide() {
+                        showSlide(index + 1);
+                    }
+
+                    function prevSlide() {
+                        showSlide(index - 1);
+                    }
+
+                    function startTimer() {
+                        stopTimer();
+                        timer = setInterval(nextSlide, SLIDE_INTERVAL_MS);
+                    }
+
+                    function stopTimer() {
+                        if (timer) {
+                            clearInterval(timer);
+                            timer = null;
+                        }
+                    }
+
+                    // Start auto sliding
+                    startTimer();
+
+                    // Pause on hover to improve UX
+                    galleryRoot.addEventListener('mouseenter', stopTimer);
+                    galleryRoot.addEventListener('mouseleave', startTimer);
+
+                    // buttons
+                    if (btnNext) {
+                        btnNext.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            stopTimer();
+                            nextSlide();
+                            startTimer();
+                        });
+                    }
+                    if (btnPrev) {
+                        btnPrev.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            stopTimer();
+                            prevSlide();
+                            startTimer();
+                        });
+                    }
+
+                    // dots navigation
+                    dots.forEach(dot => {
+                        dot.addEventListener('click', function () {
+                            const i = parseInt(this.getAttribute('data-index'), 10);
+                            if (!isNaN(i)) {
+                                stopTimer();
+                                showSlide(i);
+                                startTimer();
+                            }
+                        });
+                    });
+
+                    // Accessibility: keyboard navigation (left/right)
+                    galleryRoot.tabIndex = 0;
+                    galleryRoot.addEventListener('keydown', function (e) {
+                        if (e.key === 'ArrowRight') {
+                            stopTimer();
+                            nextSlide();
+                            startTimer();
+                        } else if (e.key === 'ArrowLeft') {
+                            stopTimer();
+                            prevSlide();
+                            startTimer();
+                        }
+                    });
+                })();
+            </script>
         </section>
+        <!-- ====== END modified section ====== -->
 
 
         <section class="featured">

@@ -15,7 +15,7 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   flex: 1;
   min-width: 280px;
 }
@@ -23,7 +23,7 @@
 .info-box h3 {
   font-size: 18px;
   margin-bottom: 12px;
-color: var(--color-secondary);
+  color: var(--color-secondary);
 }
 
 .info-box ul {
@@ -64,7 +64,7 @@ color: var(--color-secondary);
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .order-items th {
@@ -87,4 +87,28 @@ color: var(--color-secondary);
   text-align: right;
   color: var(--color-secondary);
   font-weight: 600;
+}
+
+.btn-cancel {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+  margin-right: 10px ;
+}
+
+.btn-cancel i {
+  font-size: 1rem;
+}
+
+.btn-cancel:hover {
+  background-color: #d32f2f;
 }

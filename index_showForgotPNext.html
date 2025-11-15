@@ -19,7 +19,6 @@
 
 <body>
     <header>
-        <div class="fix"></div>
         <div class="header-container">
             <a href="index.html" class="logo"><i class="fa-solid fa-fish"></i> Biển Xanh</a>
             <div class="search-bar">
@@ -34,69 +33,21 @@
                 <div class="notification-wrapper">
                     <div class="notification-icon" title="Thông báo">
                         <i class="fa-solid fa-bell"></i>
-                        <span class="badge">2</span>
                     </div>
 
                     <div class="notification-dropdown">
-                        <h4>🔔 Khuyến mãi mới</h4>
-                        <ul>
-                            <li>🎁 Giảm 10% cho đơn hàng từ 500.000₫</li>
-                            <li>🦐 Tặng 1 phần Tôm Sú cho đơn từ 3 sản phẩm</li>
-                        </ul>
+                        <h4>Vui lòng đăng nhập</h4>
                     </div>
                 </div>
 
-                <!-- <a href="#">Đăng nhập</a>
-                    <a href="#">Đăng ký</a> -->
                 <div class="user-menu">
-                    <div class="user-icon">
-                        <i class="fa-solid fa-user-circle"></i>
-                        <span class="username">Xin chào, Tường<a class="nav-link" href="account.html"></a></span>
-                    </div>
-                    <ul class="user-dropdown">
-                        <div class="dropdown-arrow"></div>
-                        <li><a href="account.html"><i class="fa-solid fa-id-card"></i> Thông tin tài khoản</a></li>
-                        <li><a href="index_noLogin.html"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a></li>
-                    </ul>
+                    <a href="#">Đăng nhập</a>
+                    <a href="#">Đăng ký</a>
                 </div>
                 <div class="cart-hover-area">
                     <div class="cart-icon">
-                        <a class="nav-link" href="cart.html"></a>
+                        <a href="cart.html"></a>
                         <i class="fa-solid fa-cart-shopping"></i>
-                        <span class="cart-count">2</span>
-                        <div class="cart-dropdown">
-                            <div class="cart-arrow"></div>
-                            <ul class="cart-items">
-                                <li>
-                                    <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                                        alt="Tôm Sú" />
-                                    <div class="item-info">
-                                        <div class="item-header">
-                                            <h4>Tôm Sú Tươi 500g</h4>
-                                            <span class="quantity">x1</span>
-                                        </div>
-                                        <p>Giá: 145.000₫</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="https://i.imgur.com/Bj4vYxB.jpg" alt="Cua Gạch" />
-                                    <div class="item-info">
-                                        <div class="item-header">
-                                            <h4>Cua Gạch Cà Mau</h4>
-                                            <span class="quantity">x1</span>
-                                        </div>
-                                        <p>Giá: 220.000₫</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="cart-summary">
-                                <p><strong>Tổng cộng:</strong> 365.000₫</p>
-                                <div class="cart-buttons">
-                                    <a href="cart.html" class="view-cart">Xem giỏ hàng</a>
-                                    <a href="checkout.html" class="checkout">Thanh toán</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -104,11 +55,14 @@
         </div>
     </header>
 
+    
+
     <main>
+            
         <section class="hero">
-        <h1>Hải Sản Tươi - Chất Lượng Từ Biển Cả</h1>
-        <p>Biển Xanh mang đến cho bạn nguồn hải sản tươi ngon, sạch và được kiểm định an toàn.</p>
-        <a href="products.html" class="btn">Khám phá ngay</a>
+            <h1>Hải Sản Tươi - Chất Lượng Từ Biển Cả</h1>
+            <p>Biển Xanh mang đến cho bạn nguồn hải sản tươi ngon, sạch và được kiểm định an toàn.</p>
+            <a href="products.html" class="btn">Khám phá ngay</a>
         </section>
 
 
@@ -542,6 +496,29 @@
             <div class="contact-info">Đánh giá: Gửi phản hồi</div>
         </div>
     </div>
+
+
+    <div class="modal show">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <div class="auth-form forgot-form">
+                <div class="auth-form__header">
+                    <h3 class="auth-form__heading">Quên mật khẩu</h3>
+                    <span class="auth-form__switch-btn">Đăng nhập<a class="nav-link" href="index_showLogin.html"></a></span>
+                </div>
+                <form class="auth-form__form">
+                    <div class="success-container">
+                        <p>Chúng tôi đã gửi một liên kết khôi phục đến email của bạn.
+                            Vui lòng kiểm tra hộp thư (và cả thư rác).</p>
+                        
+                        <button class = "btn--primary">Quay lại đăng nhập<a href="index_showLogin.html" class="nav-link"></a></button>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
