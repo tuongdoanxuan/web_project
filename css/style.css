@@ -57,7 +57,7 @@ header {
     font-size: 1.6em;
     font-weight: bold;
     white-space: nowrap;
-
+    margin-left: 25px;
 }
 
 .search-bar {
@@ -283,6 +283,12 @@ h2 {
     text-align: center;
     color: white;
     padding: 100px 20px;
+    animation: wave 25s ease-in-out infinite alternate;
+}
+
+@keyframes wave {
+    from { background-position: center top; }
+    to   { background-position: center bottom; }
 }
 
 .hero::before {
@@ -292,7 +298,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.2);
     z-index: 0;
 }
 
@@ -323,7 +329,7 @@ h2 {
 }
 
 
-/* Hình quảng cáo  */
+/* Hình quảng cáo */
 .promo-gallery {
     padding: 40px 20px;
     background-color: #f9f9f9;
@@ -338,26 +344,50 @@ h2 {
 
 .gallery-wrapper {
     display: flex;
+    height: 470px;
     gap: 20px;
     max-width: 1340px;
     margin: 0 auto;
     align-items: stretch;
 }
 
-.main-image {
-    position: relative;
+.main-gallery {
+    /* give the gallery an explicit height to avoid 0 height collapse */
+    height: 470px;
+    /* keep it responsive on very short viewports */
     width: 70%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.main-image img {
+/* Ensure the inner container fills the gallery height */
+.main-gallery .main-image {
+    border-radius: 12px;
+    position: relative;
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    overflow: hidden;
+}
+
+/* stacked, fading slides */
+.main-gallery .main-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.main-gallery .main-image img.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* ensure nav buttons are visible above images */
+.main-gallery .nav-btn {
+    z-index: 5;
 }
 
 .image-indicator {
@@ -367,21 +397,22 @@ h2 {
     transform: translateX(-50%);
     display: flex;
     gap: 8px;
+    z-index: 6; /* đảm bảo nằm trên ảnh */
 }
 
 .dot {
-    width: 20px;
-    height: 6px;
-    background-color: white;
-    border-radius: 3px;
-    opacity: 0.6;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    border: 2px solid rgba(0, 0, 0, 0.08);
 }
 
 .dot.active {
     background-color: #2196f3;
-    /* màu xanh */
-    opacity: 1;
+    transform: scale(1.15);
 }
 
 .side-images {
@@ -404,11 +435,53 @@ h2 {
 .side-item img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover; /* sửa từ fill -> cover cho đẹp */
     display: block;
     border-radius: 12px;
+    transition: transform 0.3s ease;
 }
 
+.side-item img:hover {
+    transform: scale(1.05); /* hiệu ứng hover nhẹ */
+}
+
+
+/*Hiệu ứng vạch sáng*/
+.shine-effect img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Hiệu ứng vạch sáng lướt ngang */
+.shine-effect {
+    position: relative;
+    display: block;       /* tránh inline-block bị co lại */
+    overflow: hidden;
+}
+
+.shine-effect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+            120deg,
+            rgba(255,255,255,0.0) 0%,
+            rgba(255,255,255,0.5) 50%,
+            rgba(255,255,255,0.0) 100%
+    );
+    transform: skewX(-25deg);
+    animation: shine 2.5s infinite;
+    pointer-events: none; /* không chặn tương tác, không che click */
+}
+
+@keyframes shine {
+    0%   { left: -100%; }
+    100% { left: 100%; }
+}
 
 /* Nút chuyển hình */
 .nav-btn {

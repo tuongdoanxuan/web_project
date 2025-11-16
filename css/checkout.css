@@ -1,15 +1,15 @@
 .checkout-wrapper {
-  max-width: 1000px;
-  margin: 60px auto;
-  background: var(--color-white);
-  border-radius: var(--radius);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  padding: 30px;
+    max-width: 1000px;
+    margin: 60px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    padding: 30px;
 }
 
 .checkout-header h1 {
   text-align: center;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   margin-bottom: 30px;
 }
 
@@ -21,14 +21,14 @@
 .checkout-row {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid #e0e0e0;
   padding: 16px 0;
 }
 
 .checkout-head {
   font-weight: bold;
   background-color: #f0f8ff;
-  border-radius: var(--radius);
+  border-radius: 10px;
   padding: 12px 0;
 }
 
