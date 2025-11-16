@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="js/global.js"></script>
+    <script src="js/autoSlide.js"></script>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
             <nav>
                 <a href="index.html">Trang chủ</a>
                 <a href="about.html">Giới thiệu</a>
-                <a href="products.html">Sản phẩm</a>
+                <a href="products_noLogin.html">Sản phẩm</a>
                 <a href="index_showLogin.html">Điểm thưởng</a>
                 <div class="notification-wrapper">
                     <div class="notification-icon" title="Thông báo">
@@ -60,36 +61,37 @@
         <section class="hero">
             <h1>Hải Sản Tươi - Chất Lượng Từ Biển Cả</h1>
             <p>Biển Xanh mang đến cho bạn nguồn hải sản tươi ngon, sạch và được kiểm định an toàn.</p>
-            <a href="products.html" class="btn">Khám phá ngay</a>
+            <a href="products_noLogin.html" class="btn">Khám phá ngay</a>
         </section>
-
 
         <section class="promo-gallery">
             <h2>Ưu Đãi Hải Sản</h2>
             <div class="gallery-wrapper">
-                <div class="main-image">
-                    <img src="assets/img/promo1.png"
-                        alt="Cua Lông HongKong Sống" />
-                    <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                <div class="main-gallery">
+                    <div class="main-image" aria-live="polite">
+                        <!-- Make sure first img has .active -->
+                        <img src="assets/img/promo1.png" alt="Cua Lông HongKong Sống - 1" class="active" />
+                        <img src="assets/img/promo4.png" alt="Cua Lông HongKong Sống - 2" />
 
-                    <!-- Indicator -->
-                    <div class="image-indicator">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
+                        <button class="nav-btn prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-btn next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+
+                        <!-- Indicator -->
+                        <div class="image-indicator" role="tablist">
+                            <span class="dot active" data-index="0" role="tab" aria-selected="true"></span>
+                            <span class="dot" data-index="1" role="tab" aria-selected="false"></span>
+                        </div>
                     </div>
                 </div>
-
 
                 <div class="side-images">
                     <div class="side-item">
                         <img src="assets/img/promo2.jpg"
-                            alt="Cua Lông HongKong Sống" />
+                             alt="Cua Lông HongKong Sống" />
                     </div>
                     <div class="side-item">
                         <img src="assets/img/promo3.jpg"
-                            alt="Cua Lông HongKong Sống" />
+                             alt="Cua Lông HongKong Sống" />
                     </div>
                 </div>
             </div>

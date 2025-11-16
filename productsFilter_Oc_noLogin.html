@@ -14,99 +14,51 @@
 </head>
 
 <body>
-<header>
-    <div class="header-container">
-        <a href="index.html" class="logo"><i class="fa-solid fa-fish"></i> Biển Xanh</a>
-        <div class="search-bar">
-            <input type="text" placeholder="Tìm kiếm hải sản..." />
-            <button><i class="fa fa-search"></i></button>
-        </div>
-        <nav>
-            <a href="index.html">Trang chủ</a>
-            <a href="about.html">Giới thiệu</a>
-            <a href="products.html">Sản phẩm</a>
-            <a href="point.html">Điểm thưởng</a>
-            <div class="notification-wrapper">
-                <div class="notification-icon" title="Thông báo">
-                    <i class="fa-solid fa-bell"></i>
-                    <span class="badge">2</span>
-                </div>
-
-                <div class="notification-dropdown">
-                    <h4>🔔 Khuyến mãi mới</h4>
-                    <ul>
-                        <li>🎁 Giảm 10% cho đơn hàng từ 500.000₫</li>
-                        <li>🦐 Tặng 1 phần Tôm Sú cho đơn từ 3 sản phẩm</li>
-                    </ul>
-                </div>
+    <header>
+        <div class="header-container">
+            <a href="index_noLogin.html" class="logo"><i class="fa-solid fa-fish"></i> Biển Xanh</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm hải sản..." />
+                <button><i class="fa fa-search"></i></button>
             </div>
+            <nav>
+                <a href="index_noLogin.html">Trang chủ</a>
+                <a href="about_noLogin.html">Giới thiệu</a>
+                <a href="products_noLogin.html">Sản phẩm</a>
+                <a href="index_showLogin.html">Điểm thưởng</a>
+                <div class="notification-wrapper">
+                    <div class="notification-icon" title="Thông báo">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
 
-            <!-- <a href="#">Đăng nhập</a>
-                <a href="#">Đăng ký</a> -->
-            <div class="user-menu">
-                <div class="user-icon">
-                    <i class="fa-solid fa-user-circle"></i>
-                    <span class="username">Xin chào, Tường<a class="nav-link" href="account.html"></a></span>
-                </div>
-                <ul class="user-dropdown">
-                    <div class="dropdown-arrow"></div>
-                    <li><a href="account.html"><i class="fa-solid fa-id-card"></i> Thông tin tài khoản</a></li>
-                    <li><a href="index_noLogin.html"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a></li>
-                </ul>
-            </div>
-            <div class="cart-hover-area">
-                <div class="cart-icon">
-                    <a class="nav-link" href="cart.html"></a>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="cart-count">2</span>
-                    <div class="cart-dropdown">
-                        <div class="cart-arrow"></div>
-                        <ul class="cart-items">
-                            <li>
-                                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg"
-                                     alt="Tôm Sú" />
-                                <div class="item-info">
-                                    <div class="item-header">
-                                        <h4>Tôm Sú Tươi 500g</h4>
-                                        <span class="quantity">x1</span>
-                                    </div>
-                                    <p>Giá: 145.000₫</p>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="https://i.imgur.com/Bj4vYxB.jpg" alt="Cua Gạch" />
-                                <div class="item-info">
-                                    <div class="item-header">
-                                        <h4>Cua Gạch Cà Mau</h4>
-                                        <span class="quantity">x1</span>
-                                    </div>
-                                    <p>Giá: 220.000₫</p>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="cart-summary">
-                            <p><strong>Tổng cộng:</strong> 365.000₫</p>
-                            <div class="cart-buttons">
-                                <a href="cart.html" class="view-cart">Xem giỏ hàng</a>
-                                <a href="checkout.html" class="checkout">Thanh toán</a>
-                            </div>
-                        </div>
+                    <div class="notification-dropdown">
+                        <h4>Vui lòng đăng nhập</h4>
                     </div>
                 </div>
-            </div>
 
-        </nav>
-    </div>
-</header>
+                <div class="user-menu">
+                    <a href="index_showLogin.html">Đăng nhập</a>
+                    <a href="index_showRegister.html">Đăng ký</a>
+                </div>
+                <div class="cart-hover-area">
+                    <div class="cart-icon">
+                        <a class="nav-link" href="index_showLogin.html"></a>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+    </header>
 
    <nav class="category-nav">
     <ul>
-      <li><a class="product-filter" href="products.html">Tất cả</a></li>
-      <li><a class="product-filter" href="productsFilter_Cua.html">Cua</a></li>
-      <li><a class="product-filter" href="productsFilter_Ca.html">Cá</a></li>
-      <li><a class="product-filter" href="productsFilter_Ghe.html">Ghẹ</a></li>
-      <li><a class="product-filter" href="productsFilter_Oc.html">Ốc</a></li>
-      <li><a class="product-filter active" href="productsFilter_So.html">Sò</a></li>
+      <li><a class="product-filter" href="products_noLogin.html">Tất cả</a></li>
+      <li><a class="product-filter" href="productsFilter_Cua_noLogin.html">Cua</a></li>
+      <li><a class="product-filter" href="productsFilter_Ca_noLogin.html">Cá</a></li>
+      <li><a class="product-filter" href="productsFilter_Ghe_noLogin.html">Ghẹ</a></li>
+      <li><a class="product-filter active" href="productsFilter_Oc_noLogin.html">Ốc</a></li>
+      <li><a class="product-filter" href="productsFilter_So_noLogin.html">Sò</a></li>
     </ul>
   </nav>
 
@@ -123,45 +75,15 @@
         </select>
     </div>
 </div>
-<h2 style="text-align:center; margin-top:20px;">Sản phẩm thuộc danh mục Sò</h2>
+<h2 style="text-align:center; margin-top:20px;">Sản phẩm thuộc danh mục Ốc</h2>
 
   <div class="product-list">
       <div class="product-card">
-          <img src="https://product.hstatic.net/1000182631/product/so_diep_nhat_1_e743a1424ace4e04b0ef6a6b2e722806_medium.jpeg" alt="Sò Điệp Nhật" />
-          <h3>Sò Điệp Nhật</h3>
-          <p class="price">259.000 VNĐ</p>
-          <p class="weight">500g/hộp</p>
-          <p class="popularity">Đã bán: 644 lượt</p>
-          <div class="rating">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <span class="rating-score">3.7/5</span>
-          </div>
-          <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-      </div>
-
-      <div class="product-card">
-          <img src="https://product.hstatic.net/1000182631/product/z3257458082276_297584c11ddd0915aa0330224402ca46_882dbc425ba24cea8fb9671ced4592a4_medium.jpg" alt="Sò Lại" />
-          <h3>Sò Lại</h3>
-          <p class="price">199.000 VNĐ</p>
-          <p class="weight">500g/hộp</p>
-          <p class="popularity">Đã bán: 523 lượt</p>
-          <div class="rating">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-              <i class="fa-regular fa-star"></i>
-              <span class="rating-score">3.8/5</span>
-          </div>
-          <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-      </div>
-
-      <div class="product-card">
-          <img src="https://product.hstatic.net/1000182631/product/117712441_2726060257660333_2070474755663957313_n_bb71561e7d934bda8e71d5eda52b70de_medium.jpg" alt="Sò Trắng" />
-          <h3>Sò Trắng</h3>
-          <p class="price">179.000 VNĐ</p>
-          <p class="weight">400g/hộp</p>
-          <p class="popularity">Đã bán: 488 lượt</p>
+          <img src="https://product.hstatic.net/1000030244/product/oc_huong__1__987281ffbad34ff1b399250b021feefb_grande.png" alt="Ốc Hút Biển" />
+          <h3>Ốc Hút Biển</h3>
+          <p class="price">129.000 VNĐ</p>
+          <p class="weight">500g/gói</p>
+          <p class="popularity">Đã bán: 645 lượt</p>
           <div class="rating">
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
@@ -172,23 +94,98 @@
       </div>
 
       <div class="product-card">
-          <img src="https://product.hstatic.net/1000182631/product/117712441_2726060257660333_2070474755663957313_n_bb71561e7d934bda8e71d5eda52b70de_medium.jpg" alt="Sò Vàng" />
-          <h3>Sò Vàng</h3>
-          <p class="price">209.000 VNĐ</p>
-          <p class="weight">500g/hộp</p>
-          <p class="popularity">Đã bán: 532 lượt</p>
+          <img src="https://product.hstatic.net/1000030244/product/so_lua_hinh_website_54b68e85d5b34a34acae1b24cd7ce3b2_grande.png" alt="Ốc Mực" />
+          <h3>Ốc Mực</h3>
+          <p class="price">159.000 VNĐ</p>
+          <p class="weight">400g/gói</p>
+          <p class="popularity">Đã bán: 512 lượt</p>
           <div class="rating">
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
               <i class="fa-regular fa-star"></i>
-              <span class="rating-score">3.9/5</span>
+              <span class="rating-score">3.8/5</span>
           </div>
           <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
       </div>
 
+      <div class="product-card">
+          <img src="https://product.hstatic.net/1000030244/product/oc_huong_2d835931b0364e6180042eb6b78fc640_grande.png" alt="Ốc Sen" />
+          <h3>Ốc Sen</h3>
+          <p class="price">139.000 VNĐ</p>
+          <p class="weight">500g/gói</p>
+          <p class="popularity">Đã bán: 478 lượt</p>
+          <div class="rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <span class="rating-score">3.7/5</span>
+          </div>
+          <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
+      </div>
+
+      <div class="product-card">
+          <img src="https://product.hstatic.net/1000030244/product/oc_huong_2d835931b0364e6180042eb6b78fc640_grande.png" alt="Ốc Len" />
+          <h3>Ốc Len</h3>
+          <p class="price">119.000 VNĐ</p>
+          <p class="weight">500g/gói</p>
+          <p class="popularity">Đã bán: 632 lượt</p>
+          <div class="rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+              <i class="fa-regular fa-star"></i>
+              <span class="rating-score">3.8/5</span>
+          </div>
+          <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
+      </div>
+
+      <div class="product-card">
+          <img src="https://cdn.hstatic.net/products/1000030244/ocbulotaw_08d83daef124463098b0c565d22969bc_grande.png" alt="Ốc Mút" />
+          <h3>Ốc Mút</h3>
+          <p class="price">129.000 VNĐ</p>
+          <p class="weight">400g/gói</p>
+          <p class="popularity">Đã bán: 558 lượt</p>
+          <div class="rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <span class="rating-score">3.6/5</span>
+          </div>
+          <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
+      </div>
+
+      <div class="product-card">
+          <img src="https://cdn.hstatic.net/products/1000030244/ocbulotsot_e25432107fa6403b99273e8c4e5bbe8e_grande.png" alt="Ốc Đảo" />
+          <h3>Ốc Đảo</h3>
+          <p class="price">149.000 VNĐ</p>
+          <p class="weight">500g/gói</p>
+          <p class="popularity">Đã bán: 491 lượt</p>
+          <div class="rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+              <i class="fa-regular fa-star"></i>
+              <span class="rating-score">3.8/5</span>
+          </div>
+          <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
+      </div>
+
+      <div class="product-card">
+          <img src="https://cdn.hstatic.net/products/1000030244/_c-h__ng_7737c6c02b98413c81442ac88f7bd80e_grande.png" alt="Ốc Luộc" />
+          <h3>Ốc Luộc</h3>
+          <p class="price">159.000 VNĐ</p>
+          <p class="weight">500g/gói</p>
+          <p class="popularity">Đã bán: 523 lượt</p>
+          <div class="rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <span class="rating-score">4.0/5</span>
+          </div>
+          <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
+      </div>
+
+
       <!-- Thêm sản phẩm Ốc khác -->
   </div>
-
 
   <footer class="footer">
     <div class="footer-top">
