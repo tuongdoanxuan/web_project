@@ -277,39 +277,6 @@
     display: block;
 }
 
-.image-badges {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 10;
-}
-
-.badge {
-    padding: 8px 16px;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 600;
-    backdrop-filter: blur(10px);
-}
-
-.badge-sale {
-    background: rgba(239, 68, 68, 0.95);
-    color: white;
-}
-
-.badge-fresh {
-    background: rgba(16, 185, 129, 0.95);
-    color: white;
-}
-
-.badge-premium {
-    background: rgba(245, 158, 11, 0.95);
-    color: white;
-}
-
 .image-actions {
     position: absolute;
     top: 20px;
