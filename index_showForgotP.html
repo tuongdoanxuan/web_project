@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hải Sản Biển Xanh</title>
-    <link rel="icon" href="assets/img/avata.png" type="image/jpeg" />
+    <link rel="icon" href="https://copilot.microsoft.com/th/id/BCO.46901ef9-0615-4efe-929b-4c6ad9f61546.png" type="image/jpeg" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/cart.css" />
     <link rel="stylesheet" href="css/login.css">
@@ -18,42 +18,55 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <a href="index.html" class="logo"><i class="fa-solid fa-fish"></i> Biển Xanh</a>
+<header>
+    <div class="header-container">
+        <div class="header-top">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="assets/img/avata.png" alt="" />
+                <span>Biển Xanh</span>
+            </a>
+
+            <!-- Search Bar -->
             <div class="search-bar">
-                <input type="text" placeholder="Tìm kiếm hải sản..." />
+                <input type="text" placeholder="Tìm kiếm hải sản...">
                 <button><i class="fa fa-search"></i></button>
             </div>
+
+            <!-- Navigation -->
             <nav>
-                <a href="index.html">Trang chủ</a>
-                <a href="about.html">Giới thiệu</a>
-                <a href="products.html">Sản phẩm</a>
-                <a href="point.html">Điểm thưởng</a>
+                <a href="index_noLogin.html">Trang chủ</a>
+                <a href="about_noLogin.html">Giới thiệu</a>
+                <a href="products_noLogin.html">Sản phẩm</a>
+                <a href="index_showLogin.html">Điểm thưởng</a>
+
+                <!-- Notifications -->
                 <div class="notification-wrapper">
                     <div class="notification-icon" title="Thông báo">
                         <i class="fa-solid fa-bell"></i>
                     </div>
-
                     <div class="notification-dropdown">
-                        <h4>Vui lòng đăng nhập</h4>
                     </div>
                 </div>
 
+                <!-- User Menu -->
                 <div class="user-menu">
-                    <a href="#">Đăng nhập</a>
-                    <a href="#">Đăng ký</a>
+                    <a href="index_showLogin.html">Đăng nhập</a>
+                    <div class="separate"></div>
+                    <a href="index_showRegister.html">Đăng ký</a>
                 </div>
+
+                <!-- Cart -->
                 <div class="cart-hover-area">
                     <div class="cart-icon">
-                        <a href="cart.html"></a>
+                        <a class="nav-link" href="index_showLogin.html"></a>
                         <i class="fa-solid fa-cart-shopping"></i>
                     </div>
                 </div>
-
             </nav>
         </div>
-    </header>
+    </div>
+</header>
 
     
 
@@ -416,65 +429,65 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="footer-logo">
-                <img src="https://i.imgur.com/Bj4vYxB.jpg" alt="Logo Biển Xanh" />
-                <p>Công ty TNHH Biển Xanh<br>ĐKKD: 0313176983 - Cấp ngày 01/04/2015</p>
-            </div>
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-logo">
+            <img src="assets/img/avata.png" alt="Logo Biển Xanh" />
+            <p>Công ty TNHH Biển Xanh<br>ĐKKD: 0313176983 - Cấp ngày 01/04/2015</p>
+        </div>
 
-            <div class="footer-links">
-                <div>
-                    <h4>THÔNG TIN</h4>
-                    <ul>
-                        <li><a href="policy.html">Chính sách bảo mật</a></li>
-                        <li><a href="policy.html">Chính sách thanh toán</a></li>
-                        <li><a href="policy.html">Chính sách vận chuyển</a></li>
-                        <li><a href="policy.html">Chính sách kiểm hàng</a></li>
-                        <li><a href="policy.html">Chính sách đổi trả</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>GIỚI THIỆU</h4>
-                    <ul>
-                        <li><a href="about.html">Về Biển Xanh</a></li>
-                        <li><a href="introduction.html">Hướng dẫn mua hàng</a></li>
-                        <li><a href="introduction.html">Hướng dẫn thanh toán</a></li>
-                        <li><a href="introduction.html">Hướng dẫn đổi trả</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>LIÊN HỆ</h4>
-                    <ul>
-                        <li>VP: 128 Đào Duy Anh, P.9, Q.Phú Nhuận, TP.HCM</li>
-                        <li>CN1: 125 Phan Đăng Lưu, P.7, Q.Phú Nhuận</li>
-                        <li>CN2: 42 Hoa Sứ, P.7, Q.Phú Nhuận</li>
-                        <li>Hotline: 0903 73 22 93</li>
-                    </ul>
-                </div>
+        <div class="footer-links">
+            <div>
+                <h4>THÔNG TIN</h4>
+                <ul>
+                    <li><a href="policy.html">Chính sách bảo mật</a></li>
+                    <li><a href="policy.html">Chính sách thanh toán</a></li>
+                    <li><a href="policy.html">Chính sách vận chuyển</a></li>
+                    <li><a href="policy.html">Chính sách kiểm hàng</a></li>
+                    <li><a href="policy.html">Chính sách đổi trả</a></li>
+                </ul>
             </div>
-
-            <div class="footer-social">
-                <h4>Kết nối với chúng tôi</h4>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
+            <div>
+                <h4>GIỚI THIỆU</h4>
+                <ul>
+                    <li><a href="about.html">Về Biển Xanh</a></li>
+                    <li><a href="introduction.html">Hướng dẫn mua hàng</a></li>
+                    <li><a href="introduction.html">Hướng dẫn thanh toán</a></li>
+                    <li><a href="introduction.html">Hướng dẫn đổi trả</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>LIÊN HỆ</h4>
+                <ul>
+                    <li>VP: 128 Đào Duy Anh, P.9, Q.Phú Nhuận, TP.HCM</li>
+                    <li>CN1: 125 Phan Đăng Lưu, P.7, Q.Phú Nhuận</li>
+                    <li>CN2: 42 Hoa Sứ, P.7, Q.Phú Nhuận</li>
+                    <li>Hotline: 0903 73 22 93</li>
+                </ul>
             </div>
         </div>
 
-        <div class="footer-bottom">
-            <div class="footer-transport">
-                <i class="fa-regular fa-copyright"></i>
-                <p> 2025 Biển Xanh | Giao hàng toàn quốc</p>
-            </div>
-            <div class="payment-icons">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mastercard-logo.png" alt="Mastercard" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/JCB_logo.svg" alt="JCB" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/ATM_logo.svg" alt="ATM" />
-            </div>
+        <div class="footer-social">
+            <h4>Kết nối với chúng tôi</h4>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
         </div>
-    </footer>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-transport">
+            <i class="fa-regular fa-copyright"></i>
+            <p> 2025 Biển Xanh | Giao hàng toàn quốc</p>
+        </div>
+        <div class="payment-icons">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" />
+            <img src="https://file.hstatic.net/1000030244/file/ck_cd323f6891834e93b197bb29a52bf2d7.svg" alt="Mastercard" />
+            <img src="https://file.hstatic.net/1000030244/file/momo_0648f180f1a64e3f84adbbce2c1eb64c.svg" alt="JCB" />
+            <img src="https://file.hstatic.net/1000030244/file/vnpay_d02a24cac6ee4e3eb900756492d7e11a.svg   " alt="ATM" />
+        </div>
+    </div>
+</footer>
 
     <div class="contact-floating">
         <div class="circle-btn circle-call">
