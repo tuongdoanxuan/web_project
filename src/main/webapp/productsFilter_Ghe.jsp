@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hải Sản Biển Xanh</title>
+    <link rel="icon" href="https://copilot.microsoft.com/th/id/BCO.46901ef9-0615-4efe-929b-4c6ad9f61546.png" type="image/jpeg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <div class="header-container">
+        <div class="header-top">
+            <!-- Logo -->
+            <a href="index.jsp" class="logo">
+                <img src="assets/img/avata.png" alt="" />
+                <span>Biển Xanh</span>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm hải sản...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+
+            <!-- Navigation -->
+            <nav>
+                <a href="index.jsp">Trang chủ</a>
+                <a href="about.jsp">Giới thiệu</a>
+                <a href="products.jsp">Sản phẩm</a>
+                <a href="point.jsp">Điểm thưởng</a>
+
+                <!-- Notifications -->
+                <div class="notification-wrapper">
+                    <div class="notification-icon" title="Thông báo">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="badge">2</span>
+                    </div>
+                    <div class="notification-dropdown">
+                        <h4>🔔 Khuyến mãi mới</h4>
+                        <ul>
+                            <li>🎁 Giảm 10% cho đơn hàng từ 500.000₫</li>
+                            <li>🦐 Tặng 1 phần Tôm Sú cho đơn từ 3 sản phẩm</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- User Menu -->
+                <div class="user-menu">
+                    <div class="user-icon">
+                        <i class="fa-solid fa-user-circle"></i>
+                        <span class="username">Xin chào, Tường</span>
+                    </div>
+                    <ul class="user-dropdown">
+                        <div class="dropdown-header">
+                            <h4>Tường</h4>
+                            <p>Thành viên VIP ⭐</p>
+                        </div>
+                        <li><a href="account.jsp"><i class="fa-solid fa-id-card"></i> Thông tin tài khoản</a></li>
+                        <li><a href="index_noLogin.jsp"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cart -->
+                <div class="cart-hover-area">
+                    <div class="cart-icon">
+                        <a class="nav-link" href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <span class="badge">2</span>
+                    </div>
+                    <div class="cart-dropdown">
+                        <div class="cart-dropdown-header">
+                            <h4><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng của bạn</h4>
+                        </div>
+                        <ul class="cart-items">
+                            <li>
+                                <img src="https://product.hstatic.net/200000325181/product/1_fee63a7c3f4c4a49b6d22d3397a5eb45_master.jpg" alt="Tôm Sú">
+                                <div class="item-info">
+                                    <div class="item-header">
+                                        <h4>Tôm Sú Tươi 500g</h4>
+                                        <span class="quantity">x1</span>
+                                    </div>
+                                    <p>145.000₫</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="https://i.imgur.com/Bj4vYxB.jpg" alt="Cua Gạch">
+                                <div class="item-info">
+                                    <div class="item-header">
+                                        <h4>Cua Gạch Cà Mau</h4>
+                                        <span class="quantity">x1</span>
+                                    </div>
+                                    <p>220.000₫</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="cart-summary">
+                            <p><strong>Tổng cộng:</strong> <strong>365.000₫</strong></p>
+                            <div class="cart-buttons">
+                                <a href="cart.jsp" class="view-cart">Xem giỏ hàng</a>
+                                <a href="checkout.jsp" class="checkout">Thanh toán</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+   <nav class="category-nav">
+    <ul>
+      <li><a class="product-filter active" href="products.jsp">Tất cả</a></li>
+      <li><a class="product-filter" href="productsFilter_Cua.jsp">Cua</a></li>
+      <li><a class="product-filter" href="productsFilter_Ca.jsp">Cá</a></li>
+      <li><a class="product-filter" href="productsFilter_Ghe.html">Ghẹ</a></li>
+      <li><a class="product-filter" href="productsFilter_Oc.jsp">Ốc</a></li>
+      <li><a class="product-filter" href="productsFilter_So.jsp">Sò</a></li>
+    </ul>
+  </nav>
+
+<div class="sort-wrapper-right">
+    <div class="sort-bar">
+        <label for="sort">
+            <i class="fa-solid fa-sort"></i> Sắp xếp theo:
+        </label>
+        <select id="sort" name="sort">
+            <option value="default">Ngẫu nhiên</option>
+            <option value="rating-asc">Đánh giá</option>
+            <option value="price-asc">Giá tăng dần</option>
+            <option value="price-desc">Giá giảm dần</option>
+        </select>
+    </div>
+</div>
+<h2 style="text-align:center; margin-top:20px;">Sản phẩm thuộc danh mục Ghẹ</h2>
+
+  <div class="product-list">
+      <div class="product-card">
+          <img src="https://product.hstatic.net/1000030244/product/size_lon_1kg_5a0ba17d1f60410db2b5f884c3b91e72_grande.png" alt="Ghẹ Biển Tươi" />
+          <h3>Ghẹ Biển Tươi</h3>
+          <p class="price">189.000 VNĐ</p>
+          <p class="weight">250 – 300g/con</p>
+          <p class="popularity">Đã bán: 812 lượt</p>
+          <div class="rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <span class="rating-score">4.0/5</span>
+          </div>
+          <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
+      </div>
+
+      <div class="product-card">
+          <img src="https://product.hstatic.net/1000030244/product/ghe_size_nho_5f2fdac9e7ca4079af2caad503935017_grande.png" alt="Ghẹ Sọc Đồng Nai" />
+          <h3>Ghẹ Sọc Đồng Nai</h3>
+          <p class="price">149.000 VNĐ</p>
+          <p class="weight">200 – 250g/con</p>
+          <p class="popularity">Đã bán: 744 lượt</p>
+          <div class="rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <span class="rating-score">3.7/5</span>
+          </div>
+          <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
+      </div>
+
+      <div class="product-card">
+          <img src="https://cdn.hstatic.net/products/1000030244/chagheweb_cb20e37ec4724af198b38e07a8fd9411_grande.png" alt="Ghẹ Đá Ninh Thuận" />
+          <h3>Ghẹ Đá Ninh Thuận</h3>
+          <p class="price">219.000 VNĐ</p>
+          <p class="weight">300g – 400g/con</p>
+          <p class="popularity">Đã bán: 512 lượt</p>
+          <div class="rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <span class="rating-score">3.6/5</span>
+          </div>
+          <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
+      </div>
+
+      <div class="product-card">
+          <img src="https://cdn.hstatic.net/products/1000182631/ghe_xanh_tuoi_song_size_lon_d4983d69e53245059de41f2377d01396_medium.jpg" alt="Ghẹ Me Cà Mau" />
+          <h3>Ghẹ Me Cà Mau</h3>
+          <p class="price">199.000 VNĐ</p>
+          <p class="weight">200 – 250g/con</p>
+          <p class="popularity">Đã bán: 598 lượt</p>
+          <div class="rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <span class="rating-score">4.0/5</span>
+          </div>
+          <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
+      </div>
+
+      <div class="product-card">
+          <img src="https://cdn.hstatic.net/products/1000182631/ghe_xanh_tuoi_song_d57397ed61b94701b8151a9b7782d17a_master.jpg" alt="Ghẹ Tròn Hải Phòng" />
+          <h3>Ghẹ Tròn Hải Phòng</h3>
+          <p class="price">189.000 VNĐ</p>
+          <p class="weight">250 – 300g/con</p>
+          <p class="popularity">Đã bán: 675 lượt</p>
+          <div class="rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+              <i class="fa-regular fa-star"></i>
+              <span class="rating-score">3.9/5</span>
+          </div>
+          <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
+      </div>
+
+
+      <!-- Thêm sản phẩm Ốc khác -->
+  </div>
+
+
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-logo">
+            <img src="assets/img/avata.png" alt="Logo Biển Xanh" />
+            <p>Công ty TNHH Biển Xanh<br>ĐKKD: 0313176983 - Cấp ngày 01/04/2015</p>
+        </div>
+
+        <div class="footer-links">
+            <div>
+                <h4>THÔNG TIN</h4>
+                <ul>
+                    <li><a href="policy.jsp">Chính sách bảo mật</a></li>
+                    <li><a href="policy.jsp">Chính sách thanh toán</a></li>
+                    <li><a href="policy.jsp">Chính sách vận chuyển</a></li>
+                    <li><a href="policy.jsp">Chính sách kiểm hàng</a></li>
+                    <li><a href="policy.jsp">Chính sách đổi trả</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>GIỚI THIỆU</h4>
+                <ul>
+                    <li><a href="about.jsp">Về Biển Xanh</a></li>
+                    <li><a href="introduction.jsp">Hướng dẫn mua hàng</a></li>
+                    <li><a href="introduction.jsp">Hướng dẫn thanh toán</a></li>
+                    <li><a href="introduction.jsp">Hướng dẫn đổi trả</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>LIÊN HỆ</h4>
+                <ul>
+                    <li>VP: 128 Đào Duy Anh, P.9, Q.Phú Nhuận, TP.HCM</li>
+                    <li>CN1: 125 Phan Đăng Lưu, P.7, Q.Phú Nhuận</li>
+                    <li>CN2: 42 Hoa Sứ, P.7, Q.Phú Nhuận</li>
+                    <li>Hotline: 0903 73 22 93</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <h4>Kết nối với chúng tôi</h4>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-transport">
+            <i class="fa-regular fa-copyright"></i>
+            <p> 2025 Biển Xanh | Giao hàng toàn quốc</p>
+        </div>
+        <div class="payment-icons">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" />
+            <img src="https://file.hstatic.net/1000030244/file/ck_cd323f6891834e93b197bb29a52bf2d7.svg" alt="Mastercard" />
+            <img src="https://file.hstatic.net/1000030244/file/momo_0648f180f1a64e3f84adbbce2c1eb64c.svg" alt="JCB" />
+            <img src="https://file.hstatic.net/1000030244/file/vnpay_d02a24cac6ee4e3eb900756492d7e11a.svg   " alt="ATM" />
+        </div>
+    </div>
+</footer>
+
+  <div class="contact-floating">
+      <div class="circle-btn circle-call">
+          <i class="fa-solid fa-phone"></i>
+          <div class="contact-info">Gọi: 0903 732 293</div>
+      </div>
+
+      <div class="circle-btn circle-zalo">
+          <span>Zalo</span>
+          <div class="contact-info">Zalo: 0913 433 587</div>
+      </div>
+
+      <div class="circle-btn circle-messenger">
+          <i class="fa-brands fa-facebook-messenger"></i>
+          <div class="contact-info">Messenger: Biển Xanh</div>
+      </div>
+      <div class="circle-btn circle-review">
+          <i class="fa-solid fa-message"></i>
+          <div class="contact-info">Đánh giá: Gửi phản hồi</div>
+      </div>
+  </div>
+</body>
+
+</html>
