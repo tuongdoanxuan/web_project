@@ -16,7 +16,7 @@ public abstract class BaseDao {
     }
     private void makeConnection(){
         MysqlDataSource src = new MysqlDataSource();
-        String url = "jbbc:mysql://" +DBPorperties.host()+":"+DBPorperties.port()+"/"+DBPorperties.dbname()+"?"+DBPorperties.option();
+        String url = "jdbc:mysql://" +DBPorperties.host()+":"+DBPorperties.port()+"/"+DBPorperties.dbname()+"?"+DBPorperties.option();
         src.setURL(url);
         src.setUser(DBPorperties.username());
         src.setPassword(DBPorperties.password());
