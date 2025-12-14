@@ -6,30 +6,36 @@ import org.jdbi.v3.core.Jdbi;
 import java.sql.SQLException;
 
 public abstract class BaseDao {
-    private Jdbi jdbi;
 
-    protected Jdbi get(){
-        if(jdbi == null){
-            makeConnection();
+    private static Jdbi jdbi;
+
+    protected static Jdbi getJdbi() {
+        if (jdbi == null) {
+            init();
         }
         return jdbi;
     }
-    private void makeConnection(){
-        MysqlDataSource src = new MysqlDataSource();
-        String url = "jbbc:mysql://" +DBPorperties.host()+":"+DBPorperties.port()+"/"+DBPorperties.dbname()+"?"+DBPorperties.option();
-        src.setURL(url);
-        src.setUser(DBPorperties.username());
-        src.setPassword(DBPorperties.password());
+
+    private static void init() {
+        MysqlDataSource dataSource = new MysqlDataSource();
+
+        String url = "jdbc:mysql://"
+                + DBPorperties.host()
+                + ":" + DBPorperties.port()
+                + "/" + DBPorperties.dbname()
+                + "?" + DBPorperties.option();
+
+        dataSource.setURL(url);
+        dataSource.setUser(DBPorperties.username());
+        dataSource.setPassword(DBPorperties.password());
 
         try {
-            src.setUseCompression(true);
-            src.setAutoReconnect(true);
-        }
-        catch (SQLException e){
+            dataSource.setUseSSL(false);
+            dataSource.setAllowPublicKeyRetrieval(true);
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        jdbi= Jdbi.create(src);
+
+        jdbi = Jdbi.create(dataSource);
     }
-
-
 }
