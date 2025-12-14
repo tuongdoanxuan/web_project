@@ -4,53 +4,37 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 public class Product implements Serializable {
-    private int idProducts;
-    private int categoriesId;
-    private String productName;
-    private double price;
-    private double weight;
-    private int sold;
-    private String tag;
-    private double rating;
-    private Timestamp createdAt;
-    private String description;
-    private String origin;
-    private int stock;
-    private double oldPrice;
+        private int id;
+        private String productName;
+        private double price;
+        private double weight;
+        private int sold;
+        private double rating;
+        private String tag;
+        private String description;
+        private String origin;
 
-    public Product(int idProducts, int categoriesId, String productName, double price, double weight, int sold, String tag, double rating, Timestamp createdAt, String description, String origin, int stock, double oldPrice) {
-        this.idProducts = idProducts;
-        this.categoriesId = categoriesId;
+    public Product(int id, String productName, double price, double weight, int sold, double rating, String tag, String description, String origin) {
+        this.id = id;
         this.productName = productName;
         this.price = price;
         this.weight = weight;
         this.sold = sold;
-        this.tag = tag;
         this.rating = rating;
-        this.createdAt = createdAt;
+        this.tag = tag;
         this.description = description;
         this.origin = origin;
-        this.stock = stock;
-        this.oldPrice = oldPrice;
     }
 
     public Product() {
     }
 
-    public int getIdProducts() {
-        return idProducts;
+    public int getId() {
+        return id;
     }
 
-    public void setIdProducts(int idProducts) {
-        this.idProducts = idProducts;
-    }
-
-    public int getCategoriesId() {
-        return categoriesId;
-    }
-
-    public void setCategoriesId(int categoriesId) {
-        this.categoriesId = categoriesId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getProductName() {
@@ -85,14 +69,6 @@ public class Product implements Serializable {
         this.sold = sold;
     }
 
-    public String getTag() {
-        return tag;
-    }
-
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
-
     public double getRating() {
         return rating;
     }
@@ -101,12 +77,12 @@ public class Product implements Serializable {
         this.rating = rating;
     }
 
-    public Timestamp getCreatedAt() {
-        return createdAt;
+    public String getTag() {
+        return tag;
     }
 
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
     public String getDescription() {
@@ -123,21 +99,5 @@ public class Product implements Serializable {
 
     public void setOrigin(String origin) {
         this.origin = origin;
-    }
-
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    public double getOldPrice() {
-        return oldPrice;
-    }
-
-    public void setOldPrice(double oldPrice) {
-        this.oldPrice = oldPrice;
     }
 }

@@ -1,41 +1,55 @@
 package vn.edu.nlu.fit.demo.controller;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
-import vn.edu.nlu.fit.demo.dao.ProductDAO;
 import vn.edu.nlu.fit.demo.model.Product;
 import vn.edu.nlu.fit.demo.services.ProductService;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(name="ProductDetailServlet", value ="/list-product")
+import java.io.IOException;
+
+@WebServlet(name = "ProductDetailServlet", value = "/product")
 public class ProductDetailServlet extends HttpServlet {
 
+    private ProductService productService;
+
+    @Override
+    public void init() {
+        productService = ProductService.getInstance();
+    }
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        ProductDAO dao = new ProductDAO();
+        String idRaw = request.getParameter("id");
 
-        String idParam = request.getParameter("id");
-
-        // ===== TRANG CHI TIẾT =====
-        if (idParam != null) {
-            int id = Integer.parseInt(idParam);
-            Product product = dao.getProductById(id);
-
-            request.setAttribute("product", product);
-            request.getRequestDispatcher("products_detail.jsp")
-                    .forward(request, response);
+        // Không có id
+        if (idRaw == null || idRaw.isEmpty()) {
+            response.sendRedirect(request.getContextPath() + "/list-product");
             return;
         }
 
-        // ===== TRANG INDEX =====
-        List<Product> list = dao.getListProduct();
-        request.setAttribute("list", list);
-        request.getRequestDispatcher("index.jsp")
+        int id;
+        try {
+            id = Integer.parseInt(idRaw);
+        } catch (NumberFormatException e) {
+            response.sendRedirect(request.getContextPath() + "/list-product");
+            return;
+        }
+
+        Product product = productService.getProductById(id);
+
+        if (product == null) {
+            response.sendRedirect(request.getContextPath() + "/list-product");
+            return;
+        }
+
+        request.setAttribute("product", product);
+        request.getRequestDispatcher("/products_detail.jsp")
                 .forward(request, response);
     }
 }

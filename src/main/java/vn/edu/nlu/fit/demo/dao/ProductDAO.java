@@ -2,117 +2,76 @@ package vn.edu.nlu.fit.demo.dao;
 
 import vn.edu.nlu.fit.demo.model.Product;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ProductDAO extends BaseDao {
-    static Map<Integer,Product> data = new HashMap<>();
-    static {
-        Product p1 = new Product();
-        p1.setIdProducts(1);
-        p1.setProductName("Tôm hùm Alaska");
-        p1.setPrice(1500000);
-        p1.setOldPrice(1700000);
-        p1.setWeight(1.2);
-        p1.setSold(35);
-        p1.setStock(45);
-        p1.setTag("tom-hum");
-        p1.setRating(4.8);
-        p1.setOrigin("Alaska, Mỹ");
-        p1.setDescription(
-                "Tôm hùm Alaska tươi sống, thịt chắc, ngọt tự nhiên, " +
-                        "được bảo quản theo tiêu chuẩn xuất khẩu, phù hợp các món cao cấp."
-        );
-        Product p2 = new Product();
-        p1.setIdProducts(1);
-        p1.setProductName("Tôm hùm Alaska");
-        p1.setPrice(1500000);
-        p1.setOldPrice(1700000);
-        p1.setWeight(1.2);
-        p1.setSold(35);
-        p1.setStock(45);
-        p1.setTag("tom-hum");
-        p1.setRating(4.8);
-        p1.setOrigin("Alaska, Mỹ");
-        p1.setDescription(
-                "Tôm hùm Alaska tươi sống, thịt chắc, ngọt tự nhiên, " +
-                        "được bảo quản theo tiêu chuẩn xuất khẩu, phù hợp các món cao cấp."
-        );
-        Product p3 = new Product();
-        p1.setIdProducts(1);
-        p1.setProductName("Tôm hùm Alaska");
-        p1.setPrice(1500000);
-        p1.setOldPrice(1700000);
-        p1.setWeight(1.2);
-        p1.setSold(35);
-        p1.setStock(45);
-        p1.setTag("tom-hum");
-        p1.setRating(4.8);
-        p1.setOrigin("Alaska, Mỹ");
-        p1.setDescription(
-                "Tôm hùm Alaska tươi sống, thịt chắc, ngọt tự nhiên, " +
-                        "được bảo quản theo tiêu chuẩn xuất khẩu, phù hợp các món cao cấp."
-        );
-        Product p4 = new Product();
-        p1.setIdProducts(1);
-        p1.setProductName("Tôm hùm Alaska");
-        p1.setPrice(1500000);
-        p1.setOldPrice(1700000);
-        p1.setWeight(1.2);
-        p1.setSold(35);
-        p1.setStock(45);
-        p1.setTag("tom-hum");
-        p1.setRating(4.8);
-        p1.setOrigin("Alaska, Mỹ");
-        p1.setDescription(
-                "Tôm hùm Alaska tươi sống, thịt chắc, ngọt tự nhiên, " +
-                        "được bảo quản theo tiêu chuẩn xuất khẩu, phù hợp các món cao cấp."
-        );
-        Product p5 = new Product();
-        p1.setIdProducts(1);
-        p1.setProductName("Tôm hùm Alaska");
-        p1.setPrice(1500000);
-        p1.setOldPrice(1700000);
-        p1.setWeight(1.2);
-        p1.setSold(35);
-        p1.setStock(45);
-        p1.setTag("tom-hum");
-        p1.setRating(4.8);
-        p1.setOrigin("Alaska, Mỹ");
-        p1.setDescription(
-                "Tôm hùm Alaska tươi sống, thịt chắc, ngọt tự nhiên, " +
-                        "được bảo quản theo tiêu chuẩn xuất khẩu, phù hợp các món cao cấp."
-        );
-        Product p6 = new Product();
-        p1.setIdProducts(1);
-        p1.setProductName("Tôm hùm Alaska");
-        p1.setPrice(1500000);
-        p1.setOldPrice(1700000);
-        p1.setWeight(1.2);
-        p1.setSold(35);
-        p1.setStock(45);
-        p1.setTag("tom-hum");
-        p1.setRating(4.8);
-        p1.setOrigin("Alaska, Mỹ");
-        p1.setDescription(
-                "Tôm hùm Alaska tươi sống, thịt chắc, ngọt tự nhiên, " +
-                        "được bảo quản theo tiêu chuẩn xuất khẩu, phù hợp các món cao cấp."
-        );
 
-        data.put(1, p1);
-        data.put(2, p2);
-        data.put(3, p3);
-        data.put(4, p4);
-        data.put(5, p5);
-        data.put(6, p6);
+    // Lấy toàn bộ sản phẩm (index.jsp)
+    public List<Product> getAll() {
+        return getJdbi().withHandle(handle ->
+                handle.createQuery("""
+                SELECT 
+                    id_products,
+                    product_name,
+                    price,
+                    weight,
+                    sold,
+                    tag,
+                    rating,
+                    description,
+                    origin
+                FROM products
+            """)
+                        .map((rs, ctx) -> {
+                            Product p = new Product();
+                            p.setId(rs.getInt("id_products"));
+                            p.setProductName(rs.getString("product_name"));
+                            p.setPrice(rs.getDouble("price"));
+                            p.setWeight(rs.getDouble("weight"));
+                            p.setSold(rs.getInt("sold"));
+                            p.setTag(rs.getString("tag"));
+                            p.setRating(rs.getDouble("rating"));
+                            p.setDescription(rs.getString("description"));
+                            p.setOrigin(rs.getString("origin"));
+                            return p;
+                        })
+                        .list()
+        );
+    }
 
-    }
-    public List<Product> getListProduct() {
-    return new ArrayList<>(data.values());
-    }
-    public Product getProductById(int id) {
-        return data.get(id);
+    // Lấy chi tiết 1 sản phẩm (product_detail.jsp)
+    public Product findById(int id) {
+        return getJdbi().withHandle(handle ->
+                handle.createQuery("""
+                SELECT 
+                    id_products,
+                    product_name,
+                    price,
+                    weight,
+                    sold,
+                    tag,
+                    rating,
+                    description,
+                    origin
+                FROM products
+                WHERE id_products = :id
+            """)
+                        .bind("id", id)
+                        .map((rs, ctx) -> {
+                            Product p = new Product();
+                            p.setId(rs.getInt("id_products"));
+                            p.setProductName(rs.getString("product_name"));
+                            p.setPrice(rs.getDouble("price"));
+                            p.setWeight(rs.getDouble("weight"));
+                            p.setSold(rs.getInt("sold"));
+                            p.setTag(rs.getString("tag"));
+                            p.setRating(rs.getDouble("rating"));
+                            p.setDescription(rs.getString("description"));
+                            p.setOrigin(rs.getString("origin"));
+                            return p;
+                        })
+                        .findOne()
+                        .orElse(null)
+        );
     }
 }

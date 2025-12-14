@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -25,7 +26,7 @@
         <div class="header-top">
             <!-- Logo -->
             <a href="${pageContext.request.contextPath}/list-product" class="logo">
-            <img src="assets/img/avata.png" alt="" />
+                <img src="${pageContext.request.contextPath}/assets/img/avata.png" alt="Biển Xanh" />
                 <span>Biển Xanh</span>
             </a>
 
@@ -37,10 +38,10 @@
 
             <!-- Navigation -->
             <nav>
-                <a href="index.html">Trang chủ</a>
-                <a href="about.jsp">Giới thiệu</a>
-                <a href="products.jsp">Sản phẩm</a>
-                <a href="point.jsp">Điểm thưởng</a>
+                <a href="${pageContext.request.contextPath}/list-product">Trang chủ</a>
+                <a href="${pageContext.request.contextPath}/about.jsp">Giới thiệu</a>
+                <a href="${pageContext.request.contextPath}/list-product">Sản phẩm</a>
+                <a href="${pageContext.request.contextPath}/point.jsp">Điểm thưởng</a>
 
                 <!-- Notifications -->
                 <div class="notification-wrapper">
@@ -123,7 +124,7 @@
     <section class="hero">
         <h1>Hải Sản Tươi - Chất Lượng Từ Biển Cả</h1>
         <p>Biển Xanh mang đến cho bạn nguồn hải sản tươi ngon, sạch và được kiểm định an toàn.</p>
-        <a href="products.jsp" class="btn">Khám phá ngay</a>
+        <a href="${pageContext.request.contextPath}/products.jsp" class="btn">Khám phá ngay</a>
     </section>
 
 
@@ -167,21 +168,25 @@
         <h2>🌟 Sản Phẩm Nổi Bật</h2>
 
         <div class="product-list">
-            <c:forEach var="p" items="${list}">
 
-                <!-- LINK BAO TOÀN BỘ CARD -->
-                <a class="product-link"
-                   href="${pageContext.request.contextPath}/product?id=${p.idProducts}">
+            <c:if test="${empty list}">
+                <p>Không có sản phẩm</p>
+            </c:if>
+
+            <c:forEach var="p" items="${list}">
+                <a href="${pageContext.request.contextPath}/product?id=${p.id}">
 
                     <div class="product-card">
 
-                        <!-- Ảnh -->
                         <img src="${pageContext.request.contextPath}/assets/img/${p.tag}.jpg"
                              alt="${p.productName}" />
 
                         <h3>${p.productName}</h3>
 
-                        <p class="price">${p.price} đ</p>
+                        <p class="price">
+                            <fmt:formatNumber value="${p.price}" type="number"/> đ
+                        </p>
+
                         <p class="weight">Trọng lượng: ${p.weight} kg</p>
                         <p class="popularity">Đã bán: ${p.sold}</p>
 
@@ -198,10 +203,11 @@
 
                     </div>
                 </a>
-
             </c:forEach>
+
         </div>
     </section>
+
 
 
 
@@ -220,164 +226,50 @@
             </div>
         </section>
 
-        <section class="promotion">
+    <section class="promotion">
             <h2>🎁 Khuyến Mại Hot</h2>
-            <div class="product-list">
-                <div class="product-card">
-                    <img src="https://images.pexels.com/photos/30159728/pexels-photo-30159728.jpeg" alt="Combo Mực Nướng + Nước Chấm Tỏi Nướng">
-                    <h3>Combo Mực Ống Nướng + Nước Chấm Tỏi Nướng</h3>
-                    <p class="price">289.000 VNĐ</p>
-                    <p class="weight">500 g mực + 1 chai nước chấm</p>
-                    <p class="popularity">Đã bán: 1.020 lượt</p>
-                    <span class="tag">HOT</span>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
-                        <span class="rating-score">3.7/5</span>
+        <div class="product-list">
+
+            <c:if test="${empty list}">
+                <p>Không có sản phẩm</p>
+            </c:if>
+
+            <c:forEach var="p" items="${list}">
+                <a href="${pageContext.request.contextPath}/product?id=${p.id}">
+
+                    <div class="product-card">
+
+                        <img src="${pageContext.request.contextPath}/assets/img/${p.tag}.jpg"
+                             alt="${p.productName}" />
+
+                        <h3>${p.productName}</h3>
+
+                        <p class="price">
+                            <fmt:formatNumber value="${p.price}" type="number"/> đ
+                        </p>
+
+                        <p class="weight">Trọng lượng: ${p.weight} kg</p>
+                        <p class="popularity">Đã bán: ${p.sold}</p>
+
+                        <span class="tag">${p.tag}</span>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="rating-score">${p.rating}</span>
+                        </div>
+
                     </div>
-                    <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-                </div>
+                </a>
+            </c:forEach>
 
-                <div class="product-card">
-                    <img src="https://images.pexels.com/photos/31302693/pexels-photo-31302693.jpeg" alt="Combo Hải Sản Trên Đá + Muối Ớt Chanh">
-                    <h3>Combo Hải Sản Trên Đá + Muối Ớt Chanh</h3>
-                    <p class="price">349.000 VNĐ</p>
-                    <p class="weight">Tôm – Cá – Mực (khoảng 600 g) + muối ớt chanh</p>
-                    <p class="popularity">Đã bán: 850 lượt</p>
-                    <span class="tag">COMBO ĐẶC BIỆT</span>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i>
-                        <span class="rating-score">3.9/5</span>
-                    </div>
-                    <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://product.hstatic.net/1000030244/product/9_1d841d161df140c8af3e7729b68a3a02_grande.png" alt="Combo Cá Hồi & Sò Điệp Sashimi">
-                    <h3>Combo Cá Hồi & Sò Điệp Sashimi</h3>
-                    <p class="price">429.000 VNĐ</p>
-                    <p class="weight">200 g cá hồi + 12 sò điệp</p>
-                    <p class="popularity">Đã bán: 560 lượt</p>
-                    <span class="tag">TƯƠI SỐNG</span>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                        <span class="rating-score">4.2/5</span>
-                    </div>
-                    <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://images.pexels.com/photos/30159728/pexels-photo-30159728.jpeg" alt="Combo Mực + Chả Mực + Sốt Me">
-                    <h3>Combo Mực Ống + Chả Mực + Sốt Me</h3>
-                    <p class="price">319.000 VNĐ</p>
-                    <p class="weight">400 g mực + 200 g chả + chai sốt me</p>
-                    <p class="popularity">Đã bán: 720 lượt</p>
-                    <span class="tag">YÊU THÍCH</span>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
-                        <span class="rating-score">3.4/5</span>
-                    </div>
-                    <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://cdn.hstatic.net/products/1000030244/y3_sot_2833576731d049028df19da10633fb41_grande.png" alt="Combo Tôm Sú + Muối Tiêu Xanh">
-                    <h3>Combo Cua + Muối Tiêu Xanh</h3>
-                    <p class="price">379.000 VNĐ</p>
-                    <p class="weight">500 g tôm sú + hũ muối tiêu</p>
-                    <p class="popularity">Đã bán: 940 lượt</p>
-                    <span class="tag">ƯU ĐÃI</span>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
-                        <span class="rating-score">3.6/5</span>
-                    </div>
-                    <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://product.hstatic.net/1000030244/product/fc4547b65fe18ebfd7f053_ac04200c507c46928cd4c4f410733b9c_grande.png" alt="Combo Nghêu Trắng + Sốt Tỏi Chanh">
-                    <h3>Combo Nghêu Trắng + Sốt Tỏi Chanh</h3>
-                    <p class="price">269.000 VNĐ</p>
-                    <p class="weight">1kg nghêu + chai sốt</p>
-                    <p class="popularity">Đã bán: 810 lượt</p>
-                    <span class="tag">GIÁ TỐT</span>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
-                        <span class="rating-score">3.3/5</span>
-                    </div>
-                    <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://cdn.hstatic.net/products/1000030244/tc3__2__3208452161c743fc8280c55628b42e84_grande.png" alt="Combo Lẩu Hải Sản + Nước Lẩu Thái Đặc Biệt">
-                    <h3>Combo Lẩu Hải Sản + Nước Lẩu Thái Đặc Biệt</h3>
-                    <p class="price">499.000 VNĐ</p>
-                    <p class="weight">Cho 3-4 người</p>
-                    <p class="popularity">Đã bán: 1.400 lượt</p>
-                    <span class="tag">COMBO HOT</span>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i>
-                        <span class="rating-score">3.8/5</span>
-                    </div>
-                    <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://product.hstatic.net/1000030244/product/tom-hum-dat_1_2dac1eb7b88f43139735a0e2b0c9dedf_grande.png" alt="Combo Tôm Tích + Sốt Me Chua Ngọt">
-                    <h3>Combo Tôm Tích + Sốt Me Chua Ngọt</h3>
-                    <p class="price">339.000 VNĐ</p>
-                    <p class="weight">500 g tôm tích + 1 chai sốt me</p>
-                    <p class="popularity">Đã bán: 670 lượt</p>
-                    <span class="tag">PREMIUM</span>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
-                        <span class="rating-score">3.4/5</span>
-                    </div>
-                    <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://product.hstatic.net/1000030244/product/sodiepphomainuong_225bb07c63cf408c9cca421e14ee56f5_grande.png" alt="Combo Sò Điệp Nướng + Hành Phi + Sốt Bơ">
-                    <h3>Combo Sò Điệp Nướng + Hành Phi + Sốt Bơ</h3>
-                    <p class="price">379.000 VNĐ</p>
-                    <p class="weight">12 con sò + phụ liệu</p>
-                    <p class="popularity">Đã bán: 920 lượt</p>
-                    <span class="tag">KHÓ QUÊN</span>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
-                        <span class="rating-score">3.5/5</span>
-                    </div>
-                    <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://cdn.hstatic.net/products/1000030244/avatacathu_a32a441956a44425a25c63c3a8912b39_grande.png" alt="Combo Cá Thu Một Nắng + Mắm Tỏi Ớt">
-                    <h3>Combo Cá Thu Một Nắng + Mắm Tỏi Ớt</h3>
-                    <p class="price">299.000 VNĐ</p>
-                    <p class="weight">500 g cá + chai mắm tỏi ớt</p>
-                    <p class="popularity">Đã bán: 780 lượt</p>
-                    <span class="tag">ĐẶC BIỆT</span>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
-                        <span class="rating-score">3.2/5</span>
-                    </div>
-                    <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-                </div>
-
-
-            </div>
+        </div>
         </section>
 
-        <section class="customer-policy">
+    <section class="customer-policy">
             <div class="container">
                 <h2>Chính Sách Khách Hàng</h2>
                 <div class="policy-list">
@@ -400,7 +292,7 @@
             </div>
         </section>
 
-        <section class="quality">
+    <section class="quality">
             <h2>Cam Kết Chất Lượng</h2>
             <div class="quality-list">
                 <div class="quality-item">
@@ -421,7 +313,7 @@
             </div>
         </section>
 
-        <section class="testimonials">
+    <section class="testimonials">
             <h2>Khách Hàng Nói Gì</h2>
             <div class="testimonial-list">
                 <div class="testimonial">
@@ -439,7 +331,7 @@
             </div>
         </section>
 
-        <section class="faq">
+    <section class="faq">
             <h2>Câu Hỏi Thường Gặp</h2>
             <div class="faq-item">
                 <h4>❓ Tôi có thể đặt hàng như thế nào?</h4>

@@ -121,9 +121,9 @@
         <!-- ========== GALLERY ========== -->
         <div class="gallery-container">
             <div class="main-image-wrapper">
-                <img class="main-image"
-                     src="${pageContext.request.contextPath}/assets/img/${product.tag}.jpg"
-                     alt="${product.productName}">
+                <img src="${pageContext.request.contextPath}/assets/img/${product.tag}.jpg">
+                <h1>${product.productName}</h1>
+                <p>${product.price}</p>
             </div>
         </div>
 

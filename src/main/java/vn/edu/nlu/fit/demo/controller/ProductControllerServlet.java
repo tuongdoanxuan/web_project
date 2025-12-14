@@ -8,20 +8,24 @@ import vn.edu.nlu.fit.demo.services.ProductService;
 
 import java.io.IOException;
 
-@WebServlet(name = "ProductControllerServlet", value = "/product")
+@WebServlet(name = "ProductControllerServlet", value = "/list-product")
 public class ProductControllerServlet extends HttpServlet {
+
+    private ProductService productService;
+
+    @Override
+    public void init() {
+        productService = ProductService.getInstance();
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        int id = Integer.parseInt(request.getParameter("id"));
+        // ĐỔI products → list
+        request.setAttribute("list", productService.getAllProducts());
 
-        ProductService ps = new ProductService();
-        Product product = ps.getProduct(id);
-
-        request.setAttribute("product", product);
-        request.getRequestDispatcher("/products_detail.jsp")
+        request.getRequestDispatcher("/index.jsp")
                 .forward(request, response);
     }
 }
