@@ -7,7 +7,7 @@ import java.util.List;
 
 public class SearchDAO extends BaseDao
 {
-    public <Product> searchResult(String keyword)
+    public List<Product> searchResult(String keyword)
     {
         String query = "SELECT * FROM products WHERE product_name LIKE :keyword OR description LIKE :keyword";
 
