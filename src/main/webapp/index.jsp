@@ -32,8 +32,10 @@
 
             <!-- Search Bar -->
             <div class="search-bar">
-                <input type="text" placeholder="Tìm kiếm hải sản...">
-                <button><i class="fa fa-search"></i></button>
+                <form action="/search" method="post">
+                    <input type="text" name = "query" placeholder="Tìm kiếm hải sản...">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
             </div>
 
             <!-- Navigation -->
