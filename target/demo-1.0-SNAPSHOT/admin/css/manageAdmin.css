@@ -1,0 +1,180 @@
+/* Reset cơ bản */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* Nội dung chính */
+.admin-content {
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.admin-header h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.admin-header p {
+    color: #7f8c8d;
+    margin-bottom: 25px;
+}
+
+/* Nút thêm Admin */
+.admin-actions {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background: var(--color-secondary);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary);
+}
+
+/* Card bảng */
+.table-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.table-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-card th,
+.table-card td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 14px;
+}
+
+.table-card th {
+    background: var(--color-secondary);
+    color: #fff;
+}
+
+.table-card tbody tr:hover {
+    background: #f9f9f9;
+}
+
+/* Badge quyền */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.badge-super {
+    background: #e0f8e9;
+    color: #2e8b57;
+}
+
+.badge-normal {
+    background: #f0f0f0;
+    color: #2c3e50;
+}
+
+/* Nút thao tác */
+.btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 8px;
+    transition: color 0.3s;
+}
+
+.btn-icon.edit {
+    color: #2980b9;
+}
+
+.btn-icon.edit:hover {
+    color: #3498db;
+}
+
+.btn-icon.delete {
+    color: #d9534f;
+}
+
+.btn-icon.delete:hover {
+    color: #a94442;
+}
+
+/* Modal thêm Admin */
+.modal {
+    display: none; /* ẩn mặc định */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+.modal-content form label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.modal-content form input,
+.modal-content form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    background: #bdc3c7;
+    color: #2c3e50;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #95a5a6;
+}
