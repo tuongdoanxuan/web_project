@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -31,9 +33,9 @@
 
             <!-- Navigation -->
             <nav>
-                <a href="index.jsp">Trang chủ</a>
+                <a href="${pageContext.request.contextPath}/index">Trang chủ</a>
                 <a href="about.jsp">Giới thiệu</a>
-                <a href="products.html">Sản phẩm</a>
+                <a href="${pageContext.request.contextPath}/products">Sản phẩm</a>
                 <a href="point.jsp">Điểm thưởng</a>
 
                 <!-- Notifications -->
@@ -112,343 +114,65 @@
         </div>
     </div>
 </header>
-    
-    <main>
-      
-      <nav class="category-nav">
+
+<main>
+
+    <!-- CATEGORY -->
+    <nav class="category-nav">
         <ul>
-          <li><a class="product-filter active" href="products.html">Tất cả</a></li>
-          <li><a class="product-filter" href="productsFilter_Cua.jsp">Cua</a></li>
-          <li><a class="product-filter" href="productsFilter_Ca.jsp">Cá</a></li>
-          <li><a class="product-filter" href="productsFilter_Ghe.jsp">Ghẹ</a></li>
-          <li><a class="product-filter" href="productsFilter_Oc.jsp">Ốc</a></li>
-          <li><a class="product-filter" href="productsFilter_So.jsp">Sò</a></li>
+            <li>
+                <a class="product-filter active"
+                   href="${pageContext.request.contextPath}/products">
+                    Tất cả
+                </a>
+            </li>
+            <li><a href="${pageContext.request.contextPath}/products?keyword=cá">Cá</a></li>
+            <li><a href="${pageContext.request.contextPath}/products?keyword=cua">Cua</a></li>
+            <li><a href="${pageContext.request.contextPath}/products?keyword=ghẹ">Ghẹ</a></li>
+            <li><a href="${pageContext.request.contextPath}/products?keyword=sò">Sò</a></li>
+            <li><a href="${pageContext.request.contextPath}/products?keyword=ốc">Ốc</a></li>
         </ul>
-      </nav>
+    </nav>
 
-  <div class="sort-wrapper-right">
-    <div class="sort-bar">
-      <label for="sort">
-        <i class="fa-solid fa-sort"></i> Sắp xếp theo:
-      </label>
-      <select id="sort" name="sort">
-        <option value="default">Ngẫu nhiên</option>
-        <option value="rating-asc">Đánh giá</option>
-        <option value="price-asc">Giá tăng dần</option>
-        <option value="price-desc">Giá giảm dần</option>
-      </select>
+    <h2 style="text-align:center; margin:20px 0;">Tất cả sản phẩm</h2>
+
+    <!-- PRODUCT LIST -->
+    <div class="product-list">
+
+        <c:if test="${empty productList}">
+            <p style="text-align:center">Không có sản phẩm nào</p>
+        </c:if>
+
+        <c:forEach var="p" items="${productList}">
+            <div class="product-card">
+
+                <!-- CLICK → DETAIL -->
+                <a href="${pageContext.request.contextPath}/product?id=${p.id}">
+                    <img src="${p.imageUrl}" alt="${p.productName}">
+                </a>
+
+                <h3>${p.productName}</h3>
+                <p class="price">${p.price} VNĐ</p>
+                <p class="weight">${p.weight} g</p>
+                <p class="popularity">Đã bán: ${p.sold}</p>
+
+                <c:if test="${p.rating >= 4}">
+                    <span class="tag">HOT</span>
+                </c:if>
+
+                <div class="rating">
+                    ⭐ ${p.rating}/5
+                </div>
+
+                <div class="cart-but">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+
+            </div>
+        </c:forEach>
+
     </div>
-  </div>
-        <h2 style="text-align:center; margin-top:20px;">Tất cả sản phẩm</h2>
-      <div class="product-list" id="product-list">
-        <!-- Các sản phẩm sẽ được render ở đây -->
-          <!-- 1 -->
-          <div class="product-card">
-              <img src="https://cdn.hstatic.net/products/1000030244/1_4db0f64df6f74ea8a56ad987529d111a_grande.png"
-                   alt="Cua Lông HongKong Sống" />
-              <h3>Cua Lông HongKong</h3>
-              <p class="price">169.000 VNĐ</p>
-              <p class="weight">200g ± 50g/con</p>
-              <p class="popularity">Đã bán: 752 lượt</p>
-              <span class="tag">ĐANG HOT</span>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">4.0/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 2 -->
-          <div class="product-card">
-              <img src="https://cdn.hstatic.net/products/1000030244/td6_098b2474b46d40069d1c2cc6449a5e59_grande.png"
-                   alt="Tôm Sú Tươi Cỡ Lớn" />
-              <h3>Tôm Sú Tươi Cỡ Lớn</h3>
-              <p class="price">299.000 VNĐ</p>
-              <p class="weight">500g/khay (8–10 con)</p>
-              <p class="popularity">Đã bán: 1.024 lượt</p>
-              <span class="tag">BÁN CHẠY</span>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.8/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 3 -->
-          <div class="product-card">
-              <img src="https://product.hstatic.net/1000030244/product/31_ce5e876aa9064aab94986118f686d69a_grande.png"
-                   alt="Mực Ống Tươi" />
-              <h3>Mực Ống Tươi</h3>
-              <p class="price">235.000 VNĐ</p>
-              <p class="weight">500g/khay</p>
-              <p class="popularity">Đã bán: 890 lượt</p>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.5/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 4 -->
-          <div class="product-card">
-              <img src="https://product.hstatic.net/1000030244/product/thit-ngheu-tuoi-truoc_13d3639db84f460f8635481f38151617_grande.png"
-                   alt="Nghêu Trắng Loại 1" />
-              <h3>Nghêu Trắng Loại 1</h3>
-              <p class="price">89.000 VNĐ</p>
-              <p class="weight">1kg/túi</p>
-              <p class="popularity">Đã bán: 1.542 lượt</p>
-              <span class="tag">GIÁ TỐT</span>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.9/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 5 -->
-          <div class="product-card">
-              <img src="https://cdn.hstatic.net/products/1000030244/hinh_4__53b2379cbc0b4e2a8c009e24f65a9bc0_grande.png"
-                   alt="Hàu Sữa Pháp" />
-              <h3>Hàu Sữa Pháp</h3>
-              <p class="price">129.000 VNĐ</p>
-              <p class="weight">12 con/hộp</p>
-              <p class="popularity">Đã bán: 932 lượt</p>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.6/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 6 -->
-          <div class="product-card">
-              <img src="https://product.hstatic.net/1000030244/product/screenshot_2023-06-01_152542_dca172da86764686951ba399575e8bbf_grande.png"
-                   alt="Cá Hồi Fillet" />
-              <h3>Cá Hồi Fillet</h3>
-              <p class="price">189.000 VNĐ</p>
-              <p class="weight">300g/miếng</p>
-              <p class="popularity">Đã bán: 1.332 lượt</p>
-              <span class="tag">GIÀU OMEGA-3</span>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">4.1/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 7 -->
-          <div class="product-card">
-              <img src="https://product.hstatic.net/1000030244/product/tom_the_avatar_42e7cacdeeb64f0d8e00b02901cac1a2_grande.png"
-                   alt="Tôm Thẻ Tươi" />
-              <h3>Tôm Thẻ Tươi</h3>
-              <p class="price">159.000 VNĐ</p>
-              <p class="weight">500g (25–30 con)</p>
-              <p class="popularity">Đã bán: 2.024 lượt</p>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.7/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 8 -->
-          <div class="product-card">
-              <img src="https://cdn.hstatic.net/products/1000030244/screenshot_2025-07-21_131530_b44afab7039e4adba9caa0be712ca92d_grande.png"
-                   alt="Cá Basa Phi Lê" />
-              <h3>Cá Basa Phi Lê</h3>
-              <p class="price">79.000 VNĐ</p>
-              <p class="weight">500g/gói</p>
-              <p class="popularity">Đã bán: 1.552 lượt</p>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.9/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 9 -->
-          <div class="product-card">
-              <img src="https://cdn.hstatic.net/products/1000030244/2_b921b3743ec646ed8a6b08712adee1e1_grande.png"
-                   alt="Mực Lá Cắt Khoanh" />
-              <h3>Mực Lá Cắt Khoanh</h3>
-              <p class="price">249.000 VNĐ</p>
-              <p class="weight">500g/khay</p>
-              <p class="popularity">Đã bán: 684 lượt</p>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.5/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 10 -->
-          <div class="product-card">
-              <img src="https://product.hstatic.net/1000030244/product/so_huyet_co_587441283cea427cb4c8ca78ab79c02f_grande.jpg"
-                   alt="Sò Huyết Loại Lớn" />
-              <h3>Sò Huyết Loại Lớn</h3>
-              <p class="price">155.000 VNĐ</p>
-              <p class="weight">1kg</p>
-              <p class="popularity">Đã bán: 1.242 lượt</p>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.9/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 11 -->
-          <div class="product-card">
-              <img src="https://cdn.hstatic.net/products/1000030244/ch1_98d2415716604b288552cf690861a56c_1024x1024.png"
-                   alt="Sashimi Cá Hồi" />
-              <h3>Sashimi Cá Hồi</h3>
-              <p class="price">219.000 VNĐ</p>
-              <p class="weight">200g/hộp</p>
-              <p class="popularity">Đã bán: 1.842 lượt</p>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">4.2/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 12 -->
-          <div class="product-card">
-              <img src="https://product.hstatic.net/1000030244/product/untitled-5-03_e911a9c112fa44f9848a965d3c570cf4_grande.png"
-                   alt="Cá Trích Nauy" />
-              <h3>Cá Trích Nauy</h3>
-              <p class="price">139.000 VNĐ</p>
-              <p class="weight">500g</p>
-              <p class="popularity">Đã bán: 552 lượt</p>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.6/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 13 -->
-          <div class="product-card">
-              <img src="https://cdn.hstatic.net/products/1000030244/matcanguweb_01bb43f395d74c5f8eabe334b5aacaca_grande.png"
-                   alt="Cá Ngừ Cắt Khoanh" />
-              <h3>Mắt Cá Ngừ Cắt Khoanh</h3>
-              <p class="price">165.000 VNĐ</p>
-              <p class="weight">500g</p>
-              <p class="popularity">Đã bán: 712 lượt</p>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.8/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 14 -->
-          <div class="product-card">
-              <img src="https://product.hstatic.net/1000030244/product/tom-cang-xanh_2de015440edc4ddea5460b3e7883041f_grande.jpg"
-                   alt="Tôm Càng Xanh" />
-              <h3>Tôm Càng Xanh</h3>
-              <p class="price">329.000 VNĐ</p>
-              <p class="weight">500g (6–8 con)</p>
-              <p class="popularity">Đã bán: 1.122 lượt</p>
-              <span class="tag">CAO CẤP</span>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.7/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-          <!-- 15 -->
-          <div class="product-card">
-              <img src="https://product.hstatic.net/1000030244/product/untitled-5-03_2259fdd99b3a4341ade7af7bf8651046_grande.png"
-                   alt="Sò Điệp Nhật" />
-              <h3>Sò Điệp Nhật</h3>
-              <p class="price">259.000 VNĐ</p>
-              <p class="weight">500g/hộp</p>
-              <p class="popularity">Đã bán: 644 lượt</p>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.7/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-          <div class="product-card">
-              <img src="https://cdn.hstatic.net/products/1000030244/bachtuotweb_93daaaff296d4fdfbe07abc74cbc7150_grande.png"
-                   alt="Bạch Tuộc Baby Hàn Quốc" />
-              <h3>Bạch Tuộc Baby Nhật</h3>
-              <p class="price">189.000 VNĐ</p>
-              <p class="weight">500g/khay</p>
-              <p class="popularity">Đã bán: 842 lượt</p>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.8/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-          <div class="product-card">
-              <img src="https://cdn.hstatic.net/products/1000030244/cachivangwweb_405a63e48f524f86b88693dba5aa279c_grande.png"
-                   alt="Cá Chỉ Vàng Hai Nắng" />
-              <h3>Cá Chỉ Vàng Một Nắng</h3>
-              <p class="price">155.000 VNĐ</p>
-              <p class="weight">500g/gói</p>
-              <p class="popularity">Đã bán: 1.215 lượt</p>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">4.0/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-          <div class="product-card">
-              <img src="https://product.hstatic.net/1000030244/product/600g_13_11_dfaafdf9ff9f4948a5ca9aa23d68e79b_grande.png"
-                   alt="Tôm Hùm Baby Đông Lạnh" />
-              <h3>Tôm Hùm Baby Đông Lạnh</h3>
-              <p class="price">289.000 VNĐ</p>
-              <p class="weight">300–350g/con</p>
-              <p class="popularity">Đã bán: 577 lượt</p>
-              <div class="rating">
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <span class="rating-score">3.9/5</span>
-              </div>
-              <div class="cart-but"><i class="fa-solid fa-cart-shopping"></i></div>
-          </div>
-
-      </div>
-    </main>
+</main>
 
 <footer class="footer">
     <div class="footer-top">
