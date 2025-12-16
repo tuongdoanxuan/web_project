@@ -33,7 +33,7 @@
             <!-- Search Bar -->
             <div class="search-bar">
                 <form action="/search" method="post">
-                    <input type="text" name = "query" placeholder="Tìm kiếm hải sản...">
+                    <input type="text" name = "keyword" placeholder="Tìm kiếm hải sản...">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
