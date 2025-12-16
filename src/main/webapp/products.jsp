@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -25,8 +28,11 @@
 
             <!-- Search Bar -->
             <div class="search-bar">
-                <input type="text" placeholder="Tìm kiếm hải sản...">
-                <button><i class="fa fa-search"></i></button>
+                <form action="/search" method="post">
+                    <input type="text" name = "query" placeholder="Tìm kiếm hải sản...">
+
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
             </div>
 
             <!-- Navigation -->
