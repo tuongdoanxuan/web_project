@@ -1,0 +1,258 @@
+/* ===== Reset ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ===== Container ===== */
+.order-detail {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* ===== Header ===== */
+.order-detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.order-detail-header h2 {
+    font-size: 1.5em;
+    color: #084d7d;
+}
+
+.order-detail-header h2 span {
+    color: #ff5722;
+    font-weight: 600;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: #084d7d;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+    color: #ff5722;
+}
+
+/* ===== Tracking Progress Bar ===== */
+.order-tracking {
+    margin: 20px 0 30px;
+    padding: 0 8px;
+}
+
+.progressbar {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.progressbar::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e5e7eb;
+    z-index: 0;
+}
+
+.step {
+    position: relative;
+    text-align: center;
+    color: #9aa4af;
+    font-size: 14px;
+    flex: 1;
+    padding-top: 40px;
+}
+
+.step::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cfd8dc;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 1;
+}
+
+.step::after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background: #e5e7eb;
+    z-index: 0;
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+.step.completed {
+    color: #084d7d;
+}
+
+.step.completed::before {
+    border-color: #084d7d;
+    background: #084d7d;
+    box-shadow: 0 0 0 2px #eaf2f8 inset;
+}
+
+.step.completed::after {
+    background: #084d7d;
+}
+
+/* ===== Responsive Progress Bar ===== */
+@media (max-width: 600px) {
+    .progressbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .progressbar::before {
+        left: 26px;
+        right: auto;
+        width: 2px;
+        height: calc(100% - 20px);
+        top: 20px;
+    }
+
+    .step {
+        text-align: left;
+        padding-top: 0;
+        padding-left: 24px;
+        margin-bottom: 30px;
+    }
+
+    .step::before {
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+
+    .step::after {
+        top: 10px;
+        left: -2px;
+        width: 2px;
+        height: 100%;
+    }
+
+    .step:last-child::after {
+        display: none;
+    }
+}
+
+/* ===== Order Summary ===== */
+.order-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.order-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.order-info h4 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #084d7d;
+}
+
+.order-info p {
+    margin: 6px 0;
+    font-size: 0.95em;
+}
+
+.status {
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    display: inline-block;
+}
+
+.status.delivered {
+    background: #4caf50;
+    color: white;
+}
+
+.total {
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+/* ===== Products ===== */
+.order-products h4 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #084d7d;
+}
+
+.order-products ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-products li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95em;
+}
+
+/* ===== Actions ===== */
+.order-actions {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.cancel-btn {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cancel-btn i {
+    margin-right: 6px;
+}
+
+.cancel-btn:hover {
+    background: #d32f2f;
+}

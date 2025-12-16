@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Admin</title>
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <h2 class="logo">Biển Xanh Admin</h2>
+            <ul class="admin-menu">
+                <li><a href="dashboard.html" class="active"><i class="fa-solid fa-chart-line"></i> Tổng quan</a></li>
+                <li><a href="products.jsp"><i class="fa-solid fa-boxes-stacked"></i> Sản phẩm</a></li>
+                <li><a href="orders.jsp"><i class="fa-solid fa-receipt"></i> Đơn hàng</a></li>
+                <li><a href="users.jsp"><i class="fa-solid fa-users"></i> Người dùng</a></li>
+                <li><a href="comment.jsp"><i class="fa-solid fa-comments"></i> Đánh giá của khách hàng</a></li>
+                <li><a href="changePassword.jsp"><i class="fa-solid fa-key"></i> Đổi mật khẩu</a></li>
+                <li><a href="manageAdmin.jsp"><i class="fa-solid fa-user-shield"></i> Phân quyền</a></li>
+                <li><a href="login.jsp"><i class="fa-solid fa-right-from-bracket"></i> Thoát admin</a></li>
+            </ul>
+        </aside>
+
+        <!-- Nội dung chính -->
+        <main class="admin-content">
+            <header class="admin-header">
+                <h1><i class="fa-solid fa-chart-line"></i> Tổng quan hệ thống</h1>
+                <p>Xin chào, Admin! Dưới đây là thống kê hoạt động hôm nay.</p>
+
+                <div class="filter-bar">
+                    <label for="time-filter">Xem theo:</label>
+                    <select id="time-filter">
+                        <option value="today">Hôm nay</option>
+                        <option value="week">7 ngày qua</option>
+                        <option value="month">Tháng này</option>
+                    </select>
+                </div>
+            </header>
+
+            <section class="dashboard-cards">
+                <div class="card orders">
+                    <i class="fa-solid fa-receipt"></i>
+                    <h3>Tổng đơn hàng</h3>
+                    <p>128</p>
+                </div>
+                <div class="card revenue">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                    <h3>Doanh thu hôm nay</h3>
+                    <p>12.500.000₫</p>
+                </div>
+                <div class="card users">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <h3>Người dùng mới</h3>
+                    <p>5</p>
+                </div>
+                <div class="card products">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <h3>Sản phẩm đang bán</h3>
+                    <p>42</p>
+                </div>
+            </section>
+
+            <section class="dashboard-chart">
+                <h2>Thống kê tổng quan hôm nay</h2>
+                <canvas id="overviewChart"></canvas>
+            </section>
+
+            <section class="quick-actions">
+                <a href="add-product.html" class="quick-btn"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
+                <a href="orders.jsp" class="quick-btn"><i class="fa-solid fa-truck"></i> Xử lý đơn hàng</a>
+            </section>
+        </main>
+
+    </div>
+</body>
+
+</html>
