@@ -1,0 +1,117 @@
+.user-table {
+  margin-top: 30px;
+  overflow-x: auto;
+}
+
+.user-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.user-table thead {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.user-table th {
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.user-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+  color: #333;
+}
+
+.user-table tbody tr:hover {
+  background-color: #f2f9ff;
+}
+
+/* Trạng thái */
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-block;
+  text-align: center;
+  min-width: 100px;
+}
+
+.status.active {
+  background-color: #e0f8e9;
+  color: #2e8b57;
+}
+
+.status.inactive {
+  background-color: #f8d7da;
+  color: #a94442;
+}
+
+/* Nút thao tác */
+.btn-view,
+.btn-lock,
+.btn-unlock {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+}
+
+.btn-view {
+  color: var(--color-secondary);
+}
+
+.btn-lock {
+  color: #d9534f;
+}
+
+.btn-unlock {
+  color: #28a745;
+}
+
+.btn-view:hover,
+.btn-lock:hover,
+.btn-unlock:hover {
+  transform: scale(1.1);
+}
+
+.order-search {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.order-search input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95em;
+}
+
+.order-search button {
+  background: var(--color-secondary);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.order-search button:hover {
+  background: var(--color-primary);
+}
