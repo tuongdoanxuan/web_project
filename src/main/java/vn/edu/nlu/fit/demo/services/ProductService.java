@@ -2,7 +2,6 @@ package vn.edu.nlu.fit.demo.services;
 
 import vn.edu.nlu.fit.demo.dao.ProductDAO;
 import vn.edu.nlu.fit.demo.model.Product;
-
 import java.util.List;
 
 public class ProductService {
@@ -21,12 +20,29 @@ public class ProductService {
         return instance;
     }
 
-    // Lấy danh sách sản phẩm (index.jsp)
-    public List<Product> getAllProducts() {
-        return dao.getAll();
+    // INDEX
+    public List<Product> getFeaturedProducts() {
+        return dao.getFeaturedProducts();
     }
 
-    // Lấy chi tiết 1 sản phẩm
+    public Product getHotProduct() {
+        return dao.getHotProduct();
+    }
+
+    public List<Product> getPromotionProducts() {
+        return dao.getPromotionProducts();
+    }
+
+    // PRODUCTS
+    public List<Product> getAllProducts() {
+        return dao.findAll();
+    }
+
+    public List<Product> getProductsByKeyword(String keyword) {
+        return dao.findByKeyword(keyword);
+    }
+
+    // DETAIL
     public Product getProductById(int id) {
         return dao.findById(id);
     }
