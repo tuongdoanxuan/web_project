@@ -1,34 +1,22 @@
 package vn.edu.nlu.fit.demo.model;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 
 public class Product implements Serializable {
-        private int id;
-        private String productName;
-        private double price;
-        private double weight;
-        private int sold;
-        private double rating;
-        private String tag;
-        private String description;
-        private String origin;
+    private int id;
+    private String productName;
+    private double price;
+    private double weight;
+    private int sold;
+    private double rating;
+    private String tag;
+    private String description;
+    private String origin;
+    private String imageUrl; // <-- từ bảng images
 
-    public Product(int id, String productName, double price, double weight, int sold, double rating, String tag, String description, String origin) {
-        this.id = id;
-        this.productName = productName;
-        this.price = price;
-        this.weight = weight;
-        this.sold = sold;
-        this.rating = rating;
-        this.tag = tag;
-        this.description = description;
-        this.origin = origin;
-    }
+    public Product() {}
 
-    public Product() {
-    }
-
+    // GETTER - SETTER
     public int getId() {
         return id;
     }
@@ -99,5 +87,13 @@ public class Product implements Serializable {
 
     public void setOrigin(String origin) {
         this.origin = origin;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
