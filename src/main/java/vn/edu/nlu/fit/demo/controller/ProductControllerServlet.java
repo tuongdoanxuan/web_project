@@ -21,11 +21,18 @@ public class ProductControllerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
+        // ✅ LOAD DATA TỪ DB
         req.setAttribute("featuredList", service.getFeaturedProducts());
-        req.setAttribute("hotProduct", service.getHotProduct());
         req.setAttribute("promotionList", service.getPromotionProducts());
+        req.setAttribute("hotProduct", service.getHotProduct());
 
-        req.getRequestDispatcher("/index.jsp").forward(req, resp);
+        // ✅ SET CONTENT
+        req.setAttribute("contentPage", "indexContent.jsp");
+        req.setAttribute("pageTitle", "Trang chủ | Biển Xanh");
+
+
+        req.getRequestDispatcher("/base.jsp").forward(req, resp);
     }
 }
+
 

@@ -1,8 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 
 <section class="hero">
     <h1>Hải Sản Tươi - Chất Lượng Từ Biển Cả</h1>
     <p>Biển Xanh mang đến cho bạn nguồn hải sản tươi ngon, sạch và được kiểm định an toàn.</p>
-    <a href="${pageContext.request.contextPath}/products.jsp" class="btn">Khám phá ngay</a>
+    <a href="${pageContext.request.contextPath}/list-product" class="btn">Khám phá ngay</a>
 </section>
 
 
@@ -47,14 +49,15 @@
 
     <div class="product-list">
 
-        <c:if test="${empty list}">
-            <p>Không có sản phẩm</p>
+        <c:if test="${empty featuredList}">
+        <p>Không có sản phẩm</p>
         </c:if>
 
-        <c:forEach var="p" items="${list}">
-            <a href="${pageContext.request.contextPath}/product?id=${p.id}">
+        <c:forEach var="p" items="${featuredList}">
 
-                <div class="product-card">
+            <a href="${pageContext.request.contextPath}/product-detail?id=${p.id}">
+
+            <div class="product-card">
 
                     <img src="${pageContext.request.contextPath}/assets/img/${p.tag}.jpg"
                          alt="${p.productName}" />
@@ -108,12 +111,14 @@
     <h2>🎁 Khuyến Mại Hot</h2>
     <div class="product-list">
 
-        <c:if test="${empty list}">
-            <p>Không có sản phẩm</p>
+        <c:if test="${empty promotionList}">
+        <p>Không có sản phẩm</p>
         </c:if>
 
-        <c:forEach var="p" items="${list}">
-            <a href="${pageContext.request.contextPath}/product?id=${p.id}">
+        <c:forEach var="p" items="${promotionList}">
+
+            <a href="${pageContext.request.contextPath}/product-detail?id=${p.id}">
+
 
                 <div class="product-card">
 
