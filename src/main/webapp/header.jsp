@@ -11,14 +11,14 @@
     <div class="header-container">
         <div class="header-top">
             <!-- Logo -->
-            <a href="${pageContext.request.contextPath}/list-product" class="logo">
+            <a href="${pageContext.request.contextPath}/index" class="logo">
                 <img src="${pageContext.request.contextPath}/assets/img/avata.png" alt="Biển Xanh" />
                 <span>Biển Xanh</span>
             </a>
 
             <!-- Search Bar -->
             <div class="search-bar">
-                <form action="/search" method="post">
+                <form action="${pageContext.request.contextPath}/search" method="get">
                     <input type="text" name = "keyword" placeholder="Tìm kiếm hải sản...">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
@@ -26,7 +26,7 @@
 
             <!-- Navigation -->
             <nav>
-                <a href="${pageContext.request.contextPath}/list-product">Trang chủ</a>
+                <a href="${pageContext.request.contextPath}/index">Trang chủ</a>
                 <a href="${pageContext.request.contextPath}/about.jsp">Giới thiệu</a>
                 <a href="${pageContext.request.contextPath}/list-product">Sản phẩm</a>
                 <a href="${pageContext.request.contextPath}/point.jsp">Điểm thưởng</a>
