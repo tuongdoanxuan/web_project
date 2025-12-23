@@ -1,65 +1,52 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
 <!DOCTYPE html>
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard | Admin</title>
-    <link rel="stylesheet" href="css/admin.css" />
-    <link rel="stylesheet" href="css/comment.css">
-    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <jsp:include page="adminCommonLinks.jsp"/>
+    <link rel="stylesheet" href="${contextPath}/css/admin/comment.css">
 </head>
 
 <body>
-    <div class="admin-wrapper">
-        <!-- Sidebar -->
-        <aside class="admin-sidebar">
-            <h2 class="logo">Biển Xanh Admin</h2>
-            <ul class="admin-menu">
-                <li><a href="dashboard.jsp" class="active"><i class="fa-solid fa-chart-line"></i> Tổng quan</a></li>
-                <li><a href="products.jsp"><i class="fa-solid fa-boxes-stacked"></i> Sản phẩm</a></li>
-                <li><a href="orders.jsp"><i class="fa-solid fa-receipt"></i> Đơn hàng</a></li>
-                <li><a href="users.jsp"><i class="fa-solid fa-users"></i> Người dùng</a></li>
-                <li><a href="comment.html"><i class="fa-solid fa-comments"></i> Đánh giá của khách hàng</a></li>
-                <li><a href="changePassword.jsp"><i class="fa-solid fa-key"></i> Đổi mật khẩu</a></li>
-                <li><a href="manageAdmin.jsp"><i class="fa-solid fa-user-shield"></i> Phân quyền</a></li>
-                <li><a href="logout.html"><i class="fa-solid fa-right-from-bracket"></i> Thoát admin</a></li>
-            </ul>
-        </aside>
-        <!-- Nội dung chính -->
-        <main class="admin-content">
-      <header class="admin-header">
-        <h1><i class="fa-solid fa-comments"></i> Đánh giá & phản hồi của khách hàng</h1>
-        <p>Danh sách các đánh giá, bình luận và câu hỏi từ khách hàng.</p>
-      </header>
+<div class="admin-wrapper">
+    <!-- Sidebar -->
+    <%@include file="adminSidebar.jsp" %>
 
-      <section class="comment-section">
-        <div class="comment-card">
-          <h3><i class="fa-solid fa-user"></i> Nguyễn Văn A</h3>
-          <p><strong>Loại phản hồi:</strong> Đánh giá chất lượng</p>
-          <p><strong>Nội dung:</strong> Hải sản tươi ngon, giao hàng nhanh. Sẽ ủng hộ dài lâu!</p>
-          <button class="reply-btn"><i class="fa-solid fa-reply"></i> Phản hồi</button>
-        </div>
+    <!-- Nội dung chính -->
+    <main class="admin-content">
+        <header class="admin-header">
+            <h1><i class="fa-solid fa-comments"></i> Đánh giá & phản hồi của khách hàng</h1>
+            <p>Danh sách các đánh giá, bình luận và câu hỏi từ khách hàng.</p>
+        </header>
 
-        <div class="comment-card">
-          <h3><i class="fa-solid fa-user"></i> Trần Thị B</h3>
-          <p><strong>Loại phản hồi:</strong> Đặt câu hỏi</p>
-          <p><strong>Nội dung:</strong> Cá hồi ngâm tương có thể bảo quản được bao lâu?</p>
-          <button class="reply-btn"><i class="fa-solid fa-reply"></i> Phản hồi</button>
-        </div>
+        <section class="comment-section">
+            <div class="comment-card">
+                <h3><i class="fa-solid fa-user"></i> Nguyễn Văn A</h3>
+                <p><strong>Loại phản hồi:</strong> Đánh giá chất lượng</p>
+                <p><strong>Nội dung:</strong> Hải sản tươi ngon, giao hàng nhanh. Sẽ ủng hộ dài lâu!</p>
+                <button class="reply-btn"><i class="fa-solid fa-reply"></i> Phản hồi</button>
+            </div>
 
-        <div class="comment-card">
-          <h3><i class="fa-solid fa-user"></i> Lê Minh C</h3>
-          <p><strong>Loại phản hồi:</strong> Góp ý cải tiến</p>
-          <p><strong>Nội dung:</strong> Nên có thêm lựa chọn thanh toán qua VNPay QR.</p>
-          <button class="reply-btn"><i class="fa-solid fa-reply"></i> Phản hồi</button>
-        </div>
-      </section>
+            <div class="comment-card">
+                <h3><i class="fa-solid fa-user"></i> Trần Thị B</h3>
+                <p><strong>Loại phản hồi:</strong> Đặt câu hỏi</p>
+                <p><strong>Nội dung:</strong> Cá hồi ngâm tương có thể bảo quản được bao lâu?</p>
+                <button class="reply-btn"><i class="fa-solid fa-reply"></i> Phản hồi</button>
+            </div>
+
+            <div class="comment-card">
+                <h3><i class="fa-solid fa-user"></i> Lê Minh C</h3>
+                <p><strong>Loại phản hồi:</strong> Góp ý cải tiến</p>
+                <p><strong>Nội dung:</strong> Nên có thêm lựa chọn thanh toán qua VNPay QR.</p>
+                <button class="reply-btn"><i class="fa-solid fa-reply"></i> Phản hồi</button>
+            </div>
+        </section>
     </main>
 
-    </div>
+</div>
 </body>
 
 </html>

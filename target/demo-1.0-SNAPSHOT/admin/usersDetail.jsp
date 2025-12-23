@@ -1,33 +1,19 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html>
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chi Tiết Người Dùng | Admin</title>
-  <link rel="stylesheet" href="css/admin.css" />
-  <link rel="stylesheet" href="css/usersDetail.css" />
-  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <jsp:include page="adminCommonLinks.jsp"/>
+    <link rel="stylesheet" href="${contextPath}/css/admin/usersDetail.css">
 </head>
 
 <body>
   <div class="admin-wrapper">
     <!-- Sidebar -->
-      <aside class="admin-sidebar">
-          <h2 class="logo">Biển Xanh Admin</h2>
-          <ul class="admin-menu">
-              <li><a href="dashboard.jsp" class="active"><i class="fa-solid fa-chart-line"></i> Tổng quan</a></li>
-              <li><a href="products.jsp"><i class="fa-solid fa-boxes-stacked"></i> Sản phẩm</a></li>
-              <li><a href="orders.jsp"><i class="fa-solid fa-receipt"></i> Đơn hàng</a></li>
-              <li><a href="users.jsp"><i class="fa-solid fa-users"></i> Người dùng</a></li>
-              <li><a href="comment.jsp"><i class="fa-solid fa-comments"></i> Đánh giá của khách hàng</a></li>
-              <li><a href="changePassword.jsp"><i class="fa-solid fa-key"></i> Đổi mật khẩu</a></li>
-              <li><a href="manageAdmin.jsp"><i class="fa-solid fa-user-shield"></i> Phân quyền</a></li>
-              <li><a href="logout.html"><i class="fa-solid fa-right-from-bracket"></i> Thoát admin</a></li>
-          </ul>
-      </aside>
+      <%@include file="adminSidebar.jsp" %>
 
     <!-- Nội dung chính -->
     <main class="admin-content">
