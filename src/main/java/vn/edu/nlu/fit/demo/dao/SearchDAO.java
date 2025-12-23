@@ -1,6 +1,5 @@
 package vn.edu.nlu.fit.demo.dao;
 
-import org.jdbi.v3.core.statement.Query;
 import vn.edu.nlu.fit.demo.model.Product;
 
 import java.util.List;

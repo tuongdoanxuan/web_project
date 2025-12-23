@@ -41,32 +41,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>U001</td>
-                            <td>Nguyễn Văn A</td>
-                            <td>nguyena@example.com</td>
-                            <td>Khách hàng</td>
-                            <td><span class="status active">Hoạt động</span></td>
-                            <td>
-                                <a href="usersDetail.jsp" class="btn-view" title="Xem chi tiết">
-                                    <i class="fa-solid fa-eye"></i>
-                                </a>
-                                <button class="btn-lock" title="Khóa"><i class="fa-solid fa-lock"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>U002</td>
-                            <td>Trần Thị B</td>
-                            <td>tranb@example.com</td>
-                            <td>Admin</td>
-                            <td><span class="status inactive">Bị khóa</span></td>
-                            <td>
-                                <a href="usersDetail.jsp" class="btn-view" title="Xem chi tiết">
-                                    <i class="fa-solid fa-eye"></i>
-                                </a>
-                                <button class="btn-unlock" title="Mở khóa"><i class="fa-solid fa-unlock"></i></button>
-                            </td>
-                        </tr>
+                        <c:forEach var="user" items="${userList}">
+                            <tr>
+                                <td>${user.id}</td>
+                                <td>${user.firstName}</td>
+                                <td>${user.email}</td>
+                                <td>${user.role}</td>
+                                <td><span class="status active">Hoạt động</span></td>
+                                <td>
+                                    <a href="usersDetail.jsp" class="btn-view" title="Xem chi tiết">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                    <button class="btn-lock" title="Khóa"><i class="fa-solid fa-lock"></i></button>
+                                </td>
+                            </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </section>

@@ -8,8 +8,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(name = "AdminComments", value = "/admin/comments")
-public class AdminCommentsServlet extends HttpServlet
+@WebServlet(name = "AdminProducts", value = "/admin/products")
+public class AdminProductsServlet extends HttpServlet
 {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -17,7 +17,7 @@ public class AdminCommentsServlet extends HttpServlet
 
         // implement check user role is admin here
 
-        request.setAttribute("pageTitle", "Phân quyền");
-        request.getRequestDispatcher("/admin/comment.jsp").forward(request, response);
+        request.setAttribute("pageTitle", "Quản lý sản phẩm");
+        request.getRequestDispatcher("/admin/products.jsp").forward(request, response);
     }
 }
