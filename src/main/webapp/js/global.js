@@ -6,7 +6,7 @@ function sortProducts(option)
 
     // Implement sorting logic here based on changedValue
     // For example, you might want to sort products by price, name, etc.
-    // it will based on changed value and update the product list 
+    // it will based on changed value and update the product list
 }
 
 function loadProducts()
@@ -23,9 +23,19 @@ function loadProducts()
 function renderRating(rating)
 {
     console.log("Rendering rating: " + rating);
-    
+
     // Implement rating rendering logic here
     // This could involve creating star icons based on the rating value
+}
+
+function hideClass(className)
+{
+    document.getElementsByClassName(className)[0].style.display = "none";
+}
+
+function showClass(className)
+{
+    document.getElementsByClassName(className)[0].style.display = "block";
 }
 
 function alertFunction(_str)
@@ -33,6 +43,6 @@ function alertFunction(_str)
     alert(_str);
 }
 
-window.onload = function() {
-    loadProducts();
-}
+// window.onload = function() {
+//     loadProducts();
+// }

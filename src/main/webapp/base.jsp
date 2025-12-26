@@ -6,6 +6,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -27,12 +28,11 @@
           href="https://copilot.microsoft.com/th/id/BCO.46901ef9-0615-4efe-929b-4c6ad9f61546.png"
           type="image/jpeg"/>
 
-    <!-- ⚠️ BẮT BUỘC dùng contextPath -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/cart.css"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/register.css"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/products.css"/>
+    <link rel="stylesheet" href="${contextPath}/css/style.css"/>
+    <link rel="stylesheet" href="${contextPath}/css/cart.css"/>
+    <link rel="stylesheet" href="${contextPath}/css/login.css"/>
+    <link rel="stylesheet" href="${contextPath}/css/register.css"/>
+    <link rel="stylesheet" href="${contextPath}/css/products.css"/>
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -42,10 +42,8 @@
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <jsp:include page="/header.jsp"/>
 
-<!-- ================= MAIN ================= -->
 <main>
     <c:choose>
         <c:when test="${not empty contentPage}">
@@ -53,16 +51,14 @@
         </c:when>
         <c:otherwise>
             <h2 style="text-align:center; margin:50px 0">
-                ❌ Lỗi: contentPage chưa được set từ Servlet
+                forgot to set contentPage
             </h2>
         </c:otherwise>
     </c:choose>
 </main>
 
-<!-- ================= FOOTER ================= -->
 <jsp:include page="/footer.jsp"/>
 
-<!-- ================= FLOAT CONTACT ================= -->
 <div class="contact-floating">
     <div class="circle-btn circle-call">
         <i class="fa-solid fa-phone"></i>
@@ -84,6 +80,8 @@
         <div class="contact-info">Đánh giá: Gửi phản hồi</div>
     </div>
 </div>
+
+<jsp:include page="/AuthModal/Modal.jsp"/>
 
 </body>
 </html>

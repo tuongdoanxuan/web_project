@@ -39,6 +39,7 @@ function showLoginModal() {
         if (forgotForm) forgotForm.classList.remove('active');
         
         document.body.style.overflow = 'hidden';
+        updateURL('login'); // Add URL parameter
     }
 }
 
@@ -55,6 +56,7 @@ function showRegisterModal() {
         if (forgotForm) forgotForm.classList.remove('active');
         
         document.body.style.overflow = 'hidden';
+        updateURL('register'); // Add URL parameter
     }
 }
 
@@ -71,6 +73,7 @@ function showForgotPasswordModal() {
         if (registerForm) registerForm.classList.remove('active');
         
         document.body.style.overflow = 'hidden';
+        updateURL('forgot'); // Add URL parameter
     }
 }
 

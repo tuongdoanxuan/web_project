@@ -7,7 +7,7 @@ public class ProductDAO extends BaseDao {
 
     private static final String BASE_QUERY = """
         SELECT
-            id_products AS id,
+            id,
             product_name AS productName,
             price,
             weight,

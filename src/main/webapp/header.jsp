@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: longnguyen
@@ -6,30 +7,33 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <header>
     <div class="header-container">
         <div class="header-top">
             <!-- Logo -->
-            <a href="${pageContext.request.contextPath}/index" class="logo">
-                <img src="${pageContext.request.contextPath}/assets/img/avata.png" alt="Biển Xanh" />
+            <a href="${contextPath}/index" class="logo">
+                <img src="${contextPath}/assets/img/avata.png" alt="Biển Xanh" />
                 <span>Biển Xanh</span>
             </a>
 
             <!-- Search Bar -->
             <div class="search-bar">
-                <form action="${pageContext.request.contextPath}/search" method="get">
-                    <input type="text" name = "keyword" placeholder="Tìm kiếm hải sản...">
+                <form action="${contextPath}/search" method="get">
+                    <label class="search-input">
+                        <input type="text" name = "keyword" placeholder="Tìm kiếm hải sản...">
+                    </label>
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
 
             <!-- Navigation -->
             <nav>
-                <a href="${pageContext.request.contextPath}/index">Trang chủ</a>
-                <a href="${pageContext.request.contextPath}/about.jsp">Giới thiệu</a>
-                <a href="${pageContext.request.contextPath}/list-product">Sản phẩm</a>
-                <a href="${pageContext.request.contextPath}/point.jsp">Điểm thưởng</a>
+                <a href="${contextPath}/index">Trang chủ</a>
+                <a href="${contextPath}/about.jsp">Giới thiệu</a>
+                <a href="${contextPath}/list-product">Sản phẩm</a>
+                <a href="${contextPath}/point.jsp">Điểm thưởng</a>
 
                 <!-- Notifications -->
                 <div class="notification-wrapper">
@@ -46,26 +50,48 @@
                     </div>
                 </div>
 
-                <!-- User Menu -->
-                <div class="user-menu">
-                    <div class="user-icon">
-                        <i class="fa-solid fa-user-circle"></i>
-                        <span class="username">Xin chào, Tường</span>
-                    </div>
-                    <ul class="user-dropdown">
-                        <div class="dropdown-header">
-                            <h4>Tường</h4>
-                            <p>Thành viên VIP ⭐</p>
+                <!-- User Menu - Show different UI based on login state -->
+                <c:choose>
+                    <c:when test="${not empty sessionScope.user}">
+                        <!-- LOGGED IN USER -->
+                        <div class="user-menu">
+                            <div class="user-icon">
+                                <i class="fa-solid fa-user-circle"></i>
+                                <span class="username">Xin chào, ${sessionScope.user.firstName}</span>
+                            </div>
+                            <ul class="user-dropdown">
+                                <div class="dropdown-header">
+                                    <h4>${sessionScope.user.firstName} ${sessionScope.user.lastName}</h4>
+                                    <p>Thành viên <c:if test="${sessionScope.user.role == 'ADMIN'}">ADMIN</c:if><c:if test="${sessionScope.user.role != 'ADMIN'}">⭐</c:if></p>
+                                </div>
+                                <li><a href="${pageContext.request.contextPath}/account.jsp"><i class="fa-solid fa-id-card"></i> Thông tin tài khoản</a></li>
+                                <c:if test="${sessionScope.user.role == 'ADMIN'}">
+                                    <li><a href="${pageContext.request.contextPath}/admin/dashboard"><i class="fa-solid fa-shield"></i> Quản trị</a></li>
+                                </c:if>
+                                <li><a href="${pageContext.request.contextPath}/logout"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a></li>
+                            </ul>
                         </div>
-                        <li><a href="account.jsp"><i class="fa-solid fa-id-card"></i> Thông tin tài khoản</a></li>
-                        <li><a href="index_noLogin.jsp"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a></li>
-                    </ul>
-                </div>
+                    </c:when>
+                    <c:otherwise>
+                        <!-- NOT LOGGED IN -->
+                        <div class="user-menu">
+                            <button onclick="showLoginModal();" class="btn-login">Đăng nhập</button>
+                            <button onclick="showRegisterModal();" class="btn-register">Đăng ký</button>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
 
                 <!-- Cart -->
                 <div class="cart-hover-area">
                     <div class="cart-icon">
-                        <a class="nav-link" href="cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <c:choose>
+                            <c:when test="${not empty sessionScope.user}">
+                                <a class="nav-link" href="${contextPath}/cart.jsp"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </c:when>
+                            <c:otherwise>
+                                <a class="nav-link" href="#" onclick="showLoginModal(); return false;"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </c:otherwise>
+                        </c:choose>
                         <span class="badge">2</span>
                     </div>
                     <div class="cart-dropdown">

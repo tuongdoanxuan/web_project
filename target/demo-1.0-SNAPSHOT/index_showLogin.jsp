@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html lang="vi">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
+<html>
 <head>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hải Sản Biển Xanh</title>
     <link rel="icon" href="https://copilot.microsoft.com/th/id/BCO.46901ef9-0615-4efe-929b-4c6ad9f61546.png" type="image/jpeg" />
@@ -508,34 +509,7 @@
             <div class="contact-info">Đánh giá: Gửi phản hồi</div>
         </div>
     </div>
-
-
-    <div class="modal show">
-        <div class="modal__overlay"></div>
-        <div class="modal__body">
-            <div class="auth-form login">
-                <div class="auth-form__header">
-                    <h3 class="auth-form__heading">Đăng nhập</h3>
-                    <span class="auth-form__switch-btn">Đăng ký<a class="nav-link" href="index_showRegister.jsp"></a></span>
-                </div>
-                <div class="auth-form__form">
-                    <input type="text" class="auth-form__input" placeholder="Email của bạn" />
-                    <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn" />
-                </div>
-                <div class="auth-form__aside">
-                    <div class="auth-form__help">
-                        <a href="index_showForgotP.jsp">Quên mật khẩu</a> | <a href="#">Cần trợ giúp?</a>
-                    </div>
-                </div>
-                <div class="auth-form__controls">
-                    <button class="btn&#45;&#45;normal">Trở lại<a class="nav-link" href="index_noLogin.jsp"></a></button>
-                    <button class="btn&#45;&#45;primary">Đăng nhập<a class="nav-link" href="index.jsp"></a>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </div>
+<jsp:include page="AuthModal/Modal.jsp"/>
 </body>
 
 </html>

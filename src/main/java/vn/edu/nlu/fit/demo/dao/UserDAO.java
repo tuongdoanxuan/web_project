@@ -90,12 +90,34 @@ public class UserDAO extends BaseDao
         return getJdbi().withHandle(handle ->
                 handle.createUpdate("""
                             INSERT INTO users (
-                              first_name, last_name, email, phone, password, created_at, role, salt
+                              first_name, last_name, email, phone, password, salt, created_at, role
                             ) VALUES (
-                              :firstName, :lastName, :email, :phone, :password, :createdAt, :role, :salt
+                              :firstName, :lastName, :email, :phone, :hashedPassword, :salt, :createdDate, 'USER'
                             )
                         """)
-                        .bindBean(user)   // uses bean getters/setters for :firstName etc.
+                        .bindBean(user)
+                        .execute() > 0
+        );
+    }
+    
+    public boolean emailExists(String email)
+    {
+        List<User> users = getJdbi().withHandle(handle ->
+                handle.createQuery(QUERY + "WHERE email = :email")
+                        .bind("email", email)
+                        .mapToBean(User.class)
+                        .list()
+        );
+        return !users.isEmpty();
+    }
+    
+    public boolean updatePasswordByEmail(String email, String hashedPassword, String salt)
+    {
+        return getJdbi().withHandle(handle ->
+                handle.createUpdate("UPDATE users SET password = :password, salt = :salt WHERE email = :email")
+                        .bind("email", email)
+                        .bind("password", hashedPassword)
+                        .bind("salt", salt)
                         .execute() > 0
         );
     }
