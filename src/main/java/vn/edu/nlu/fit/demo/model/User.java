@@ -1,5 +1,7 @@
 package vn.edu.nlu.fit.demo.model;
 
+import org.jdbi.v3.core.mapper.reflect.ColumnName;
+
 import java.io.Serializable;
 import java.sql.Date;
 
@@ -13,7 +15,7 @@ public class User implements Serializable
     private String role;
     private String hashedPassword;
     private String salt;
-    private Date createdDate;
+    private final Date createdDate;
 
     public User()
     {
@@ -23,11 +25,6 @@ public class User implements Serializable
     public Date getCreatedDate()
     {
         return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate)
-    {
-        this.createdDate = createdDate;
     }
 
     public void setHashedPassword(String hashedPassword)
