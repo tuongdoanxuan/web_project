@@ -46,4 +46,13 @@ public class ProductService {
     public Product getProductById(int id) {
         return dao.findById(id);
     }
+
+    // ================= PRODUCTS (SORT) =================
+    public List<Product> getAllProductsSorted(String sort) {
+        return dao.findAllSorted(sort);
+    }
+
+    public List<Product> getProductsByKeywordSorted(String keyword, String sort) {
+        return dao.findByKeywordSorted(keyword, sort);
+    }
 }

@@ -24,15 +24,20 @@
                 throws ServletException, IOException {
 
             String keyword = req.getParameter("keyword");
+            String sort = req.getParameter("sort");
+            if (sort == null || sort.isBlank()) {
+                sort = "default";
+            }
 
             if (keyword == null || keyword.isBlank()) {
-                req.setAttribute("productList", service.getAllProducts());
+                req.setAttribute("productList", service.getAllProductsSorted(sort));
                 req.setAttribute("pageTitle", "Tất cả sản phẩm | Biển Xanh");
             } else {
-                req.setAttribute("productList", service.getProductsByKeyword(keyword));
+                req.setAttribute("productList", service.getProductsByKeywordSorted(keyword,sort));
                 req.setAttribute("pageTitle", "Tìm kiếm: " + keyword + " | Biển Xanh");
 
             }
+            req.setAttribute("currentSort", sort);
             req.setAttribute("contentPage", "products.jsp");
             req.getRequestDispatcher("/base.jsp").forward(req, resp);
         }
