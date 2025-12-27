@@ -143,8 +143,7 @@ public class RegisterServlet extends HttpServlet {
         newUser.setLastName(lastName);
         newUser.setPhone(phone != null && !phone.isEmpty() ? phone : null);
         newUser.setRole("USER");
-        newUser.setCreatedDate(new Date(System.currentTimeMillis()));
-        
+
         // Hash password with salt
         String salt = PasswordUtils.generateSalt();
         String hashedPassword = PasswordUtils.hashPassword(password, salt);
@@ -164,7 +163,7 @@ public class RegisterServlet extends HttpServlet {
                 // Store user in session
                 SessionUtil.setUser(session, loggedInUser);
                 
-                // Regenerate session ID for security
+                // Regenerate session ID for secuirty
                 request.changeSessionId();
                 
                 // Generate new CSRF token
@@ -173,7 +172,7 @@ public class RegisterServlet extends HttpServlet {
                 // Redirect to home page
                 response.sendRedirect(contextPath + "/index?welcome=true");
             } else {
-                // This shouldn't happen, but handle it gracefully
+                // This shouldn't happen, but just in case
                 response.sendRedirect(contextPath + "/index?showModal=login&error=registered");
             }
         } else {

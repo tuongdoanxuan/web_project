@@ -29,24 +29,6 @@ public class UserDAO extends BaseDao
 
         if(users.isEmpty()) return null;
 
-        User user = users.getFirst();
-
-        if(PasswordUtils.verifyPassword(password, user.getHashedPassword(), user.getSalt()))
-            return user;
-
-        return null;
-    }
-
-    public User loginPhone(String phone, String password)
-    {
-        List<User> users = getJdbi().withHandle(handle ->
-                handle.createQuery(QUERY + "WHERE phone = :phone")
-                        .bind("phone", phone)
-                        .mapToBean(User.class)
-                        .list()
-        );
-
-        if(users.isEmpty()) return null;
 
         User user = users.getFirst();
 
