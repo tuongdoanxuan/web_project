@@ -20,6 +20,38 @@
             <li><a href="${pageContext.request.contextPath}/list-product?keyword=ốc">Ốc</a></li>
         </ul>
     </nav>
+    <div class="sort-wrapper-right">
+        <form method="get" action="${pageContext.request.contextPath}/list-product">
+            <!-- giữ keyword khi sort -->
+            <c:if test="${not empty param.keyword}">
+                <input type="hidden" name="keyword" value="${param.keyword}">
+            </c:if>
+
+            <div class="sort-bar">
+                <label for="sort">
+                    <i class="fa-solid fa-sort"></i> Sắp xếp theo:
+                </label>
+                <select id="sort" name="sort" onchange="this.form.submit()">
+                    <option value="default"
+                    ${param.sort == 'default' || empty param.sort ? 'selected' : ''}>
+                        Ngẫu nhiên
+                    </option>
+                    <option value="rating"
+                    ${param.sort == 'rating' ? 'selected' : ''}>
+                        Đánh giá
+                    </option>
+                    <option value="price-asc"
+                    ${param.sort == 'price-asc' ? 'selected' : ''}>
+                        Giá tăng dần
+                    </option>
+                    <option value="price-desc"
+                    ${param.sort == 'price-desc' ? 'selected' : ''}>
+                        Giá giảm dần
+                    </option>
+                </select>
+            </div>
+        </form>
+    </div>
 
     <h2 style="text-align:center; margin:20px 0;">Tất cả sản phẩm</h2>
 

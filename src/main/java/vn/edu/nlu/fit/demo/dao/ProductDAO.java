@@ -73,4 +73,31 @@ public class ProductDAO extends BaseDao {
                         .orElse(null)
         );
     }
+    // ================= SORT HELP =================
+    private String buildOrderBy(String sort) {
+        return switch (sort) {
+            case "rating" -> " ORDER BY rating DESC";
+            case "price-asc" -> " ORDER BY price ASC";
+            case "price-desc" -> " ORDER BY price DESC";
+            default -> " ORDER BY RAND()";
+        };
+    }
+    public List<Product> findAllSorted(String sort) {
+        return getJdbi().withHandle(h ->
+                h.createQuery(BASE_QUERY + buildOrderBy(sort))
+                        .mapToBean(Product.class)
+                        .list()
+        );
+    }
+    public List<Product> findByKeywordSorted(String keyword, String sort) {
+        return getJdbi().withHandle(h ->
+                h.createQuery(BASE_QUERY
+                                + " WHERE product_name LIKE :kw "
+                                + buildOrderBy(sort))
+                        .bind("kw", "%" + keyword + "%")
+                        .mapToBean(Product.class)
+                        .list()
+        );
+    }
+
 }
