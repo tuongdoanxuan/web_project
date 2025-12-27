@@ -72,7 +72,7 @@ public class UserDAO extends BaseDao
         return getJdbi().withHandle(handle ->
                 handle.createUpdate("""
                             INSERT INTO users (
-                              first_name, last_name, email, phone, password, salt, created_at, role
+                              first_name, last_name, email, phone, hashed_password, salt, created_at, role
                             ) VALUES (
                               :firstName, :lastName, :email, :phone, :hashedPassword, :salt, :createdDate, 'USER'
                             )
